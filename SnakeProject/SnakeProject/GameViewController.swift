@@ -11,6 +11,9 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
+    
+    @IBOutlet weak var leftButton: UIButton!
+    @IBOutlet weak var rightButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,16 +24,32 @@ class GameViewController: UIViewController {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
                 
+                
+                
                 // Present the scene
                 view.presentScene(scene)
+                
             }
             
+            
+//            var gameScene = GameScene()
+//            var gameManager = GameManager(scene: gameScene)
+//            gameScene.game = gameManager
+//
+//            gameScene.initializeGameView()
+//            gameScene.startGame()
+//            gameScene.didMove(to: view)
+            
+        
             
             
             view.ignoresSiblingOrder = true
             
             view.showsFPS = true
             view.showsNodeCount = true
+            
+            
+            
         }
     }
 

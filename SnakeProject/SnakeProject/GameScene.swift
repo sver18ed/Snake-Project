@@ -21,28 +21,56 @@ class GameScene: SKScene {
         //2
         game = GameManager(scene: self)
         initializeGameView()
+        startGame()
+        
+        //1
+        let swipeRight:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeR))
+        swipeRight.direction = .right
+        view.addGestureRecognizer(swipeRight)
+        let swipeLeft:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeL))
+        swipeLeft.direction = .left
+        view.addGestureRecognizer(swipeLeft)
+        let swipeUp:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeU))
+        swipeUp.direction = .up
+        view.addGestureRecognizer(swipeUp)
+        let swipeDown:UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeD))
+        swipeDown.direction = .down
+        view.addGestureRecognizer(swipeDown)
     }
     
-//    override func update(_ currentTime: TimeInterval) {
-//        game.update(time: currentTime)
+    //2
+    @objc func swipeR() {
+        game.swipe(ID: 3)
+    }
+    @objc func swipeL() {
+        game.swipe(ID: 1)
+    }
+    @objc func swipeU() {
+        game.swipe(ID: 2)
+    }
+    @objc func swipeD() {
+        game.swipe(ID: 4)
+    }
+    
+     override func update(_ currentTime: TimeInterval) {
+        game.update(time: currentTime)
+    }
+    
+    //3
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        for touch in touches {
+//            let location = touch.location(in: self)
+//            let touchedNode = self.nodes(at: location)
+//            for node in touchedNode {
+//                if node.name == "play_button" {
+//                    startGame()
+//                }
+//            }
+//        }
 //    }
     
     //3
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in touches {
-            let location = touch.location(in: self)
-            let touchedNode = self.nodes(at: location)
-            for node in touchedNode {
-                if node.name == "play_button" {
-                    startGame()
-                }
-            }
-        }
-        startGame()
-    }
-    
-    //3
-    private func initializeGameView() {
+    public func initializeGameView() {
         //4
         //5
         let width = 550
@@ -85,7 +113,7 @@ class GameScene: SKScene {
     //4
     private func startGame() {
         print("start game")
-        let bottomCorner = CGPoint(x: 0, y: (frame.size.height / -2) + 20)
+        
         self.gameBG.isHidden = false
         self.gameBG.run(SKAction.scale(to: 1, duration: 0.4))
         self.game.initGame()
