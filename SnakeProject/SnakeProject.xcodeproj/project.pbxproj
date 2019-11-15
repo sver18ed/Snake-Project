@@ -19,6 +19,7 @@
 		BA528DB8237EB7D800B57435 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA528DB7237EB7D800B57435 /* MainMenuViewController.swift */; };
 		BA528DBA237EB7F100B57435 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA528DB9237EB7F100B57435 /* GameOverViewController.swift */; };
 		BA528DBC237EB80300B57435 /* HighscoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA528DBB237EB80300B57435 /* HighscoresViewController.swift */; };
+		BA528DBE237EBE7C00B57435 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA528DBD237EBE7C00B57435 /* GameManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		BA528DB7237EB7D800B57435 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		BA528DB9237EB7F100B57435 /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		BA528DBB237EB80300B57435 /* HighscoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoresViewController.swift; sourceTree = "<group>"; };
+		BA528DBD237EBE7C00B57435 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				BA528DB7237EB7D800B57435 /* MainMenuViewController.swift */,
 				BA528DB9237EB7F100B57435 /* GameOverViewController.swift */,
 				BA528DBB237EB80300B57435 /* HighscoresViewController.swift */,
+				BA528DBD237EBE7C00B57435 /* GameManager.swift */,
 			);
 			path = SnakeProject;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				BA528DB8237EB7D800B57435 /* MainMenuViewController.swift in Sources */,
 				BA528D8A237E8D0E00B57435 /* GameScene.swift in Sources */,
 				BA528D8C237E8D0E00B57435 /* GameViewController.swift in Sources */,
+				BA528DBE237EBE7C00B57435 /* GameManager.swift in Sources */,
 				BA528D84237E8D0E00B57435 /* AppDelegate.swift in Sources */,
 				BA528DBA237EB7F100B57435 /* GameOverViewController.swift in Sources */,
 				BA528DBC237EB80300B57435 /* HighscoresViewController.swift in Sources */,
