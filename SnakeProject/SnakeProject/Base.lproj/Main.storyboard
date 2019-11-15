@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qcv-TF-bUF">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -26,55 +26,77 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
+                    <navigationItem key="navigationItem" id="22M-zh-0NT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1057" y="102"/>
+            <point key="canvasLocation" x="1966.6666666666667" y="101.78571428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Main Menu View Controller-->
         <scene sceneID="EfV-yd-I37">
             <objects>
-                <viewController id="wRG-E4-vqT" sceneMemberID="viewController">
+                <viewController id="wRG-E4-vqT" customClass="MainMenuViewController" customModule="SnakeProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gcy-Lp-GEI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mah-wS-wyy">
-                                <rect key="frame" x="107" y="504" width="201" height="79"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mah-wS-wyy">
+                                <rect key="frame" x="107" y="398" width="200" height="100"/>
                                 <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="Dkm-WW-MBt"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="j8Q-ue-MdI"/>
+                                </constraints>
                                 <state key="normal" title="Play">
                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </state>
+                                <connections>
+                                    <segue destination="BV1-FR-VrT" kind="show" id="B9b-UW-Le9"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PV2-E3-jzX">
-                                <rect key="frame" x="107" y="666" width="201" height="79"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PV2-E3-jzX">
+                                <rect key="frame" x="107" y="665" width="201" height="80"/>
                                 <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="eNv-04-JV5"/>
+                                </constraints>
                                 <state key="normal" title="Highscores">
                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </state>
+                                <connections>
+                                    <segue destination="b2E-Nh-c6v" kind="show" id="yks-TE-eAW"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Snake" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgG-kh-g8Q">
-                                <rect key="frame" x="139" y="88" width="136" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Snake" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgG-kh-g8Q">
+                                <rect key="frame" x="139" y="108" width="140" height="60"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="kgG-kh-g8Q" firstAttribute="top" secondItem="Xop-9T-Nd0" secondAttribute="top" constant="20" id="29l-bX-SMv"/>
+                            <constraint firstItem="Mah-wS-wyy" firstAttribute="centerX" secondItem="Gcy-Lp-GEI" secondAttribute="centerX" id="D9f-k7-6Vj"/>
+                            <constraint firstItem="Xop-9T-Nd0" firstAttribute="bottom" secondItem="PV2-E3-jzX" secondAttribute="bottom" constant="117" id="HoZ-Lw-CvZ"/>
+                            <constraint firstItem="Mah-wS-wyy" firstAttribute="centerY" secondItem="Gcy-Lp-GEI" secondAttribute="centerY" id="Z3o-ue-4fk"/>
+                            <constraint firstItem="Mah-wS-wyy" firstAttribute="leading" secondItem="PV2-E3-jzX" secondAttribute="leading" id="iai-Bf-LCO"/>
+                            <constraint firstItem="Xop-9T-Nd0" firstAttribute="trailing" secondItem="kgG-kh-g8Q" secondAttribute="trailing" constant="135" id="mLD-zd-E1T"/>
+                            <constraint firstItem="kgG-kh-g8Q" firstAttribute="leading" secondItem="Xop-9T-Nd0" secondAttribute="leading" constant="139" id="xGZ-bf-Ifz"/>
+                            <constraint firstItem="Xop-9T-Nd0" firstAttribute="trailing" secondItem="PV2-E3-jzX" secondAttribute="trailing" constant="106" id="xTS-F7-gO4"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Xop-9T-Nd0"/>
                     </view>
+                    <navigationItem key="navigationItem" id="edw-8s-Imc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QWx-4r-ps1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135" y="102"/>
+            <point key="canvasLocation" x="1044.9275362318842" y="101.78571428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Highscores View Controller-->
         <scene sceneID="ZDd-K7-ATl">
             <objects>
-                <viewController id="b2E-Nh-c6v" sceneMemberID="viewController">
+                <viewController id="b2E-Nh-c6v" customClass="HighscoresViewController" customModule="SnakeProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ey9-NF-nQ1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -90,15 +112,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="F8E-eF-Bex"/>
                     </view>
+                    <navigationItem key="navigationItem" id="alf-wg-rOz"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vWF-kN-XkM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="134.78260869565219" y="828.34821428571422"/>
+            <point key="canvasLocation" x="1045" y="844"/>
         </scene>
-        <!--View Controller-->
+        <!--Game Over View Controller-->
         <scene sceneID="1LQ-xR-kRm">
             <objects>
-                <viewController id="ypo-Pp-2dO" sceneMemberID="viewController">
+                <viewController id="ypo-Pp-2dO" customClass="GameOverViewController" customModule="SnakeProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ead-8T-g3h">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -117,7 +140,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xoa-yA-cTI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1057" y="813"/>
+            <point key="canvasLocation" x="1967" y="836"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZV6-jN-Vhv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qcv-TF-bUF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="juD-RS-EoD">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wRG-E4-vqT" kind="relationship" relationship="rootViewController" id="DuT-7T-Thj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XHZ-Cm-CH4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="134.78260869565219" y="101.78571428571428"/>
         </scene>
     </scenes>
 </document>
