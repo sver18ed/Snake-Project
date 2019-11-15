@@ -55,11 +55,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PV2-E3-jzX">
-                                <rect key="frame" x="107" y="665" width="201" height="80"/>
+                                <rect key="frame" x="107" y="645" width="201" height="100"/>
                                 <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="eNv-04-JV5"/>
-                                </constraints>
                                 <state key="normal" title="Highscores">
                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </state>
@@ -77,6 +74,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="kgG-kh-g8Q" firstAttribute="top" secondItem="Xop-9T-Nd0" secondAttribute="top" constant="20" id="29l-bX-SMv"/>
+                            <constraint firstItem="PV2-E3-jzX" firstAttribute="height" secondItem="Mah-wS-wyy" secondAttribute="height" id="D8J-Me-ifi"/>
                             <constraint firstItem="Mah-wS-wyy" firstAttribute="centerX" secondItem="Gcy-Lp-GEI" secondAttribute="centerX" id="D9f-k7-6Vj"/>
                             <constraint firstItem="Xop-9T-Nd0" firstAttribute="bottom" secondItem="PV2-E3-jzX" secondAttribute="bottom" constant="117" id="HoZ-Lw-CvZ"/>
                             <constraint firstItem="Mah-wS-wyy" firstAttribute="centerY" secondItem="Gcy-Lp-GEI" secondAttribute="centerY" id="Z3o-ue-4fk"/>
