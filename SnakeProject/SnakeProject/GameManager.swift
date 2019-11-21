@@ -99,12 +99,40 @@ class GameManager {
         renderChange()
     }
     
-    func swipe(ID: Int) {
-        if !(ID == 2 && playerDirection == 4) && !(ID == 4 && playerDirection == 2) {
-            if !(ID == 1 && playerDirection == 3) && !(ID == 3 && playerDirection == 1) {
-                playerDirection = ID
+    
+    func changeDirection(button: String) {
+        
+        if (button == "R") {
+            if (playerDirection == 2 || playerDirection == 4) {
+                playerDirection = 3
+            }
+            else if (playerDirection == 1) {
+                playerDirection = 2
+            }
+            
+            else if (playerDirection == 3) {
+                playerDirection = 4
             }
         }
+        
+        if (button == "L") {
+            if (playerDirection == 2 || playerDirection == 4) {
+                playerDirection = 1
+            }
+            else if (playerDirection == 1) {
+                playerDirection = 4
+            }
+            
+            else if (playerDirection == 3) {
+                playerDirection = 2
+            }
+        }
+        
+//        if !(ID == 2 && playerDirection == 4) && !(ID == 4 && playerDirection == 2) {
+//            if !(ID == 1 && playerDirection == 3) && !(ID == 3 && playerDirection == 1) {
+//                playerDirection = ID
+//            }
+//        }
     }
     
     //2
@@ -118,7 +146,7 @@ class GameManager {
         }
     }
     //3
-    func contains(a:[(Int, Int)], v:(Int,Int)) -> Bool {
+    func contains(a:[(Int, Int)], v:(Int, Int)) -> Bool {
         let (c1, c2) = v
         for (v1, v2) in a { if v1 == c1 && v2 == c2 { return true } }
         return false
