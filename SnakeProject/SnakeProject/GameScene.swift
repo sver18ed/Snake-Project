@@ -14,9 +14,10 @@ class GameScene: SKScene {
     var game: GameManager!
     
     var currentScore: SKLabelNode!
-    var PlayerPositions: [(Int, Int)] = []
+    var playerPositions: [(Int, Int)] = []
     var gameBG: SKShapeNode!
     var gameArray: [(node: SKShapeNode, x: Int, y: Int)] = []
+    var scorePos: CGPoint?
     
     override func didMove(to view: SKView) {
         game = GameManager(scene: self)
@@ -63,18 +64,6 @@ class GameScene: SKScene {
         
     }
     
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        for touch in touches {
-//            let location = touch.location(in: self)
-//            let touchedNode = self.nodes(at: location)
-//            for node in touchedNode {
-//
-//                startGame()
-//
-//            }
-//        }
-//    }
-    
     private func startGame() {
         print("Start Game")
         self.game.initGame()
@@ -91,7 +80,7 @@ class GameScene: SKScene {
         self.addChild(currentScore)
         
         let width = frame.size.width - 200
-        let height = frame.size.height - 300
+        let height = frame.size.height - 290
         let rect = CGRect(x: -width / 2, y: -height / 2, width: width, height: height)
         gameBG = SKShapeNode (rect: rect, cornerRadius: 0.02)
         gameBG.fillColor = SKColor.darkGray
@@ -105,7 +94,7 @@ class GameScene: SKScene {
     
     private func createGameBoard( width: Int, height: Int) {
         let cellWidth: CGFloat = 27.5
-        let numRows = 40
+        let numRows = 38
         let numCols = 20
         var x = CGFloat(width / -2) + (cellWidth / 2)
         var y = CGFloat(height / 2) - (cellWidth / 2)
@@ -127,6 +116,7 @@ class GameScene: SKScene {
         }
         
     }
+
     
     
     
