@@ -18,6 +18,11 @@ class GameScene: SKScene {
     var gameBG: SKShapeNode!
     var gameArray: [(node: SKShapeNode, x: Int, y: Int)] = []
     var scorePos: CGPoint?
+    var leftButton: SKShapeNode!
+    var rightButton: SKShapeNode!
+    var upButton: SKShapeNode!
+    var downButton: SKShapeNode!
+    
     
     override func didMove(to view: SKView) {
         game = GameManager(scene: self)
@@ -79,8 +84,38 @@ class GameScene: SKScene {
         currentScore.fontColor = SKColor.white
         self.addChild(currentScore)
         
+        // make turn right button in game
+        rightButton = SKShapeNode()
+        rightButton.name = "right_button"
+        rightButton.zPosition = 3
+        rightButton.position = CGPoint(x: 150, y: (frame.size.height / -2) + 200)
+        rightButton.fillColor = SKColor.green
+        let topCorner = CGPoint(x: -50, y: 50)
+        let bottomCorner = CGPoint(x: -50, y: -50)
+        let middle = CGPoint(x: 50, y: 0)
+        let path = CGMutablePath()
+        path.addLine(to: topCorner)
+        path.addLines(between: [topCorner, bottomCorner, middle])
+        rightButton.path = path
+        self.addChild(rightButton)
+        
+        // make turn left button in game
+        leftButton = SKShapeNode()
+        leftButton.name = "left_button"
+        leftButton.zPosition = 3
+        leftButton.position = CGPoint(x: -50, y: (frame.size.height / -2) + 200)
+        leftButton.fillColor = SKColor.green
+        let leftTopCorner = CGPoint(x: -50, y: 50)
+        let leftBottomCorner = CGPoint(x: -50, y: -50)
+        let leftMiddle = CGPoint(x: -150, y: 0)
+        let leftPath = CGMutablePath()
+        leftPath.addLine(to: leftTopCorner)
+        leftPath.addLines(between: [leftTopCorner, leftBottomCorner, leftMiddle])
+        leftButton.path = leftPath
+        self.addChild(leftButton)
+        
         let width = frame.size.width - 200
-        let height = frame.size.height - 290
+        let height = frame.size.height - 510
         let rect = CGRect(x: -width / 2, y: -height / 2, width: width, height: height)
         gameBG = SKShapeNode (rect: rect, cornerRadius: 0.02)
         gameBG.fillColor = SKColor.darkGray
@@ -94,7 +129,7 @@ class GameScene: SKScene {
     
     private func createGameBoard( width: Int, height: Int) {
         let cellWidth: CGFloat = 27.5
-        let numRows = 38
+        let numRows = 30
         let numCols = 20
         var x = CGFloat(width / -2) + (cellWidth / 2)
         var y = CGFloat(height / 2) - (cellWidth / 2)

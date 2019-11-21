@@ -44,10 +44,10 @@ class GameManager {
     
     private func generateNewPoint() {
         var randomX = CGFloat(arc4random_uniform(19))
-        var randomY = CGFloat(arc4random_uniform(37))
+        var randomY = CGFloat(arc4random_uniform(29))
         while contains(a: scene.playerPositions, v: (Int(randomX), Int(randomY))) {
             randomX = CGFloat(arc4random_uniform(19))
-            randomY = CGFloat(arc4random_uniform(37))
+            randomY = CGFloat(arc4random_uniform(29))
         }
         
         scene.scorePos = CGPoint(x: randomX, y: randomY)
@@ -119,10 +119,10 @@ class GameManager {
         if scene.playerPositions.count > 0 {
             let x = scene.playerPositions[0].1
             let y = scene.playerPositions[0].0
-            if y > 38 {
+            if y > 30 {
                 scene.playerPositions[0].0 = 0
             } else if y < 0 {
-                scene.playerPositions[0].0 = 38
+                scene.playerPositions[0].0 = 30
             } else if x > 20 {
                 scene.playerPositions[0].1 = 0
             } else if x < 0 {
