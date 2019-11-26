@@ -8,7 +8,9 @@
 
 import SpriteKit
 
-class GameManager {
+
+class GameManager{
+    
     
     var scene: GameScene!
     
@@ -24,6 +26,19 @@ class GameManager {
         scene.playerPositions.append((10, 10))
         scene.playerPositions.append((10,11))
         scene.playerPositions.append((10, 12))
+        scene.playerPositions.append((10, 13))
+        scene.playerPositions.append((10, 14))
+        scene.playerPositions.append((10, 15))
+        scene.playerPositions.append((10, 16))
+        scene.playerPositions.append((10, 17))
+        scene.playerPositions.append((10, 18))
+        scene.playerPositions.append((10, 19))
+        scene.playerPositions.append((10, 20))
+        scene.playerPositions.append((10, 21))
+        scene.playerPositions.append((10, 22))
+        scene.playerPositions.append((10, 23))
+        scene.playerPositions.append((10, 24))
+        
         renderChange()
         generateNewPoint()
     }
@@ -63,9 +78,32 @@ class GameManager {
                 updatePlayerPosition()
                 checkForScore()
                 checkForDeath()
-                
+                finishAnimation()
             }
         }
+    }
+    
+    
+    private func finishAnimation(){
+        if playerDirection == 0 && scene.playerPositions.count > 0 {
+            var hasFinished = true
+            let headOfSnake = scene.playerPositions[0]
+            for position in scene.playerPositions {
+                if headOfSnake != position {
+                    hasFinished = false
+                }
+            }
+            if hasFinished{
+                
+               //goToGameOver()
+                print("end game")
+                playerDirection = 4
+                goToGameOver()
+            }
+            
+        }
+        
+
     }
     
     private func checkForDeath() {
@@ -165,5 +203,7 @@ class GameManager {
             }
         }
     }
+    func goToGameOver() {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "gameOverSegue"), object: nil)    }
     
 }

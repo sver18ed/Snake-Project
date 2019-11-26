@@ -11,6 +11,7 @@ import GameplayKit
 
 class GameScene: SKScene {
     
+    
     var game: GameManager!
     
     var currentScore: SKLabelNode!

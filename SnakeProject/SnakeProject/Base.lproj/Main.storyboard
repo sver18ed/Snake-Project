@@ -15,18 +15,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game view" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3l6-c1-q5R">
-                                <rect key="frame" x="137" y="330" width="138" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game view" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3l6-c1-q5R">
+                                <rect key="frame" x="138" y="430.5" width="138" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="3l6-c1-q5R" firstAttribute="centerY" secondItem="3se-qz-xqx" secondAttribute="centerY" id="2Ad-C4-ItD"/>
+                            <constraint firstItem="3l6-c1-q5R" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="sph-ff-Kug"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
                     <navigationItem key="navigationItem" id="22M-zh-0NT"/>
+                    <connections>
+                        <segue destination="ypo-Pp-2dO" kind="show" identifier="gameOverSegue" id="HW7-vw-eUz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
@@ -99,15 +105,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="highscore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRg-ZI-4To">
-                                <rect key="frame" x="165" y="353" width="85" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="highscore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRg-ZI-4To">
+                                <rect key="frame" x="169" y="438" width="76" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="qRg-ZI-4To" firstAttribute="centerX" secondItem="Ey9-NF-nQ1" secondAttribute="centerX" id="lyi-gG-mpe"/>
+                            <constraint firstItem="qRg-ZI-4To" firstAttribute="centerY" secondItem="Ey9-NF-nQ1" secondAttribute="centerY" id="qJI-Zf-FjN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="F8E-eF-Bex"/>
                     </view>
                     <navigationItem key="navigationItem" id="alf-wg-rOz"/>
@@ -124,21 +133,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="game over" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eP-w3-9dy">
-                                <rect key="frame" x="149" y="383" width="117" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Over!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eP-w3-9dy">
+                                <rect key="frame" x="107" y="217" width="200" height="94"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="94" id="PGS-Mv-1Ym"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="0eP-w3-9dy" firstAttribute="leading" secondItem="7hw-zE-YSk" secondAttribute="leading" constant="107" id="Eg5-Xi-vuu"/>
+                            <constraint firstItem="0eP-w3-9dy" firstAttribute="top" secondItem="7hw-zE-YSk" secondAttribute="top" constant="129" id="IAh-gU-ioC"/>
+                            <constraint firstItem="7hw-zE-YSk" firstAttribute="trailing" secondItem="0eP-w3-9dy" secondAttribute="trailing" constant="107" id="yZX-x2-J8f"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7hw-zE-YSk"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Z8a-WB-6fX"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xoa-yA-cTI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1967" y="836"/>
+            <point key="canvasLocation" x="1966.6666666666667" y="835.71428571428567"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZV6-jN-Vhv">
