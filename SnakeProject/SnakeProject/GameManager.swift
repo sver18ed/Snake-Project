@@ -84,14 +84,14 @@ class GameManager {
         if scene.playerPositions.count > 0 {
             let x = scene.playerPositions[0].1
             let y = scene.playerPositions[0].0
-            if y > 40 {
+            if y > 30 - 1 {
                 scene.playerPositions[0].0 = 0
             } else if y < 0 {
-                scene.playerPositions[0].0 = 40
-            } else if x > 20 {
+                scene.playerPositions[0].0 = 30 - 1
+            } else if x > 20 - 1 {
                scene.playerPositions[0].1 = 0
             } else if x < 0 {
-                scene.playerPositions[0].1 = 20
+                scene.playerPositions[0].1 = 20 - 1
             }
         
         }
@@ -100,39 +100,31 @@ class GameManager {
     }
     
     
-    func changeDirection(button: String) {
+    func changeDirection(direction: String) {
         
-        if (button == "R") {
-            if (playerDirection == 2 || playerDirection == 4) {
-                playerDirection = 3
-            }
-            else if (playerDirection == 1) {
-                playerDirection = 2
-            }
-            
-            else if (playerDirection == 3) {
-                playerDirection = 4
-            }
-        }
-        
-        if (button == "L") {
+        if (direction == "left") {
             if (playerDirection == 2 || playerDirection == 4) {
                 playerDirection = 1
             }
-            else if (playerDirection == 1) {
-                playerDirection = 4
-            }
-            
-            else if (playerDirection == 3) {
+        }
+        
+        if (direction == "up") {
+            if (playerDirection == 1 || playerDirection == 3) {
                 playerDirection = 2
             }
         }
         
-//        if !(ID == 2 && playerDirection == 4) && !(ID == 4 && playerDirection == 2) {
-//            if !(ID == 1 && playerDirection == 3) && !(ID == 3 && playerDirection == 1) {
-//                playerDirection = ID
-//            }
-//        }
+        if (direction == "right") {
+            if (playerDirection == 2 || playerDirection == 4) {
+                playerDirection = 3
+            }
+        }
+        
+        if (direction == "down") {
+            if (playerDirection == 1 || playerDirection == 3) {
+                playerDirection = 4
+            }
+        }
     }
     
     //2
@@ -145,6 +137,7 @@ class GameManager {
             }
         }
     }
+    
     //3
     func contains(a:[(Int, Int)], v:(Int, Int)) -> Bool {
         let (c1, c2) = v
