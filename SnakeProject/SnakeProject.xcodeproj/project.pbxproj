@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BF003AE238E60E40042C406 /* HighScoreJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF003AD238E60E40042C406 /* HighScoreJson.swift */; };
+		3BF003B0238E70DD0042C406 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF003AF238E70DD0042C406 /* TableViewCell.swift */; };
 		BA528D84237E8D0E00B57435 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA528D83237E8D0E00B57435 /* AppDelegate.swift */; };
 		BA528D86237E8D0E00B57435 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BA528D85237E8D0E00B57435 /* GameScene.sks */; };
 		BA528D8A237E8D0E00B57435 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA528D89237E8D0E00B57435 /* GameScene.swift */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3BF003AD238E60E40042C406 /* HighScoreJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreJson.swift; sourceTree = "<group>"; };
+		3BF003AF238E70DD0042C406 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		BA528D80237E8D0E00B57435 /* SnakeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnakeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA528D83237E8D0E00B57435 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA528D85237E8D0E00B57435 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -89,6 +93,7 @@
 		BA528D77237E8D0E00B57435 = {
 			isa = PBXGroup;
 			children = (
+				3BF003AD238E60E40042C406 /* HighScoreJson.swift */,
 				BA528D82237E8D0E00B57435 /* SnakeProject */,
 				BA528D9D237E8D1100B57435 /* SnakeProjectTests */,
 				BA528DA8237E8D1100B57435 /* SnakeProjectUITests */,
@@ -114,6 +119,7 @@
 				BA528D89237E8D0E00B57435 /* GameScene.swift */,
 				BA528D8B237E8D0E00B57435 /* GameViewController.swift */,
 				BA528D8D237E8D0E00B57435 /* Main.storyboard */,
+				3BF003AF238E70DD0042C406 /* TableViewCell.swift */,
 				BA528D90237E8D1100B57435 /* Assets.xcassets */,
 				BA528D92237E8D1100B57435 /* LaunchScreen.storyboard */,
 				BA528D95237E8D1100B57435 /* Info.plist */,
@@ -278,7 +284,9 @@
 				BA528DB8237EB7D800B57435 /* MainMenuViewController.swift in Sources */,
 				BA528D8A237E8D0E00B57435 /* GameScene.swift in Sources */,
 				BA528D8C237E8D0E00B57435 /* GameViewController.swift in Sources */,
+				3BF003B0238E70DD0042C406 /* TableViewCell.swift in Sources */,
 				BA528DBE237EBE7C00B57435 /* GameManager.swift in Sources */,
+				3BF003AE238E60E40042C406 /* HighScoreJson.swift in Sources */,
 				BA528D84237E8D0E00B57435 /* AppDelegate.swift in Sources */,
 				BA528DBA237EB7F100B57435 /* GameOverViewController.swift in Sources */,
 				BA528DBC237EB80300B57435 /* HighscoresViewController.swift in Sources */,
