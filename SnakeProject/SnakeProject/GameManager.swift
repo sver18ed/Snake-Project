@@ -204,6 +204,9 @@ class GameManager{
         }
     }
     func goToGameOver() {
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "gameOverSegue"), object: nil)    }
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "gameOverSegue"), object: nil)
+        
+    }
+
     
 }
