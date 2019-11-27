@@ -34,39 +34,79 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mah-wS-wyy">
-                                <rect key="frame" x="107" y="504" width="201" height="79"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ormH1.003" translatesAutoresizingMaskIntoConstraints="NO" id="xeR-ni-nBb">
+                                <rect key="frame" x="-300" y="400" width="378" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Play">
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ormH1.003" translatesAutoresizingMaskIntoConstraints="NO" id="fQ4-8c-1Ax">
+                                <rect key="frame" x="-300" y="129" width="378" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ormN1.007" translatesAutoresizingMaskIntoConstraints="NO" id="6NH-fl-DaH">
+                                <rect key="frame" x="107" y="-288" width="113" height="365"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ormN1.007" translatesAutoresizingMaskIntoConstraints="NO" id="6Fv-le-nHf">
+                                <rect key="frame" x="267" y="-299" width="113" height="365"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mah-wS-wyy">
+                                <rect key="frame" x="148" y="371" width="118" height="114"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="118" id="JKi-4d-EXr"/>
+                                    <constraint firstAttribute="width" secondItem="Mah-wS-wyy" secondAttribute="height" multiplier="1:1" id="qCu-FM-mNm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Play" backgroundImage="play.fill" catalog="system">
                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </state>
                                 <connections>
                                     <segue destination="BV1-FR-VrT" kind="show" id="m1z-lO-dhE"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PV2-E3-jzX">
-                                <rect key="frame" x="107" y="666" width="201" height="79"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PV2-E3-jzX">
+                                <rect key="frame" x="107" y="298" width="201" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="fnR-Sh-YvU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Highscores">
-                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="l3w-Kn-zkV" kind="show" id="pPZ-zF-Ek7"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Snake" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgG-kh-g8Q">
-                                <rect key="frame" x="139" y="88" width="136" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="50"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Snake" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgG-kh-g8Q">
+                                <rect key="frame" x="55" y="194" width="304" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="oN8-8p-TZ3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="80"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="kgG-kh-g8Q" firstAttribute="leading" secondItem="Xop-9T-Nd0" secondAttribute="leading" constant="55" id="93t-iG-yrT"/>
+                            <constraint firstItem="PV2-E3-jzX" firstAttribute="top" secondItem="kgG-kh-g8Q" secondAttribute="bottom" constant="8" id="Gd6-0d-fdI"/>
+                            <constraint firstItem="Mah-wS-wyy" firstAttribute="centerX" secondItem="Gcy-Lp-GEI" secondAttribute="centerX" id="JNm-Jd-gHO"/>
+                            <constraint firstItem="Mah-wS-wyy" firstAttribute="top" secondItem="PV2-E3-jzX" secondAttribute="bottom" constant="38" id="OCb-He-kff"/>
+                            <constraint firstItem="kgG-kh-g8Q" firstAttribute="top" secondItem="Xop-9T-Nd0" secondAttribute="top" constant="150" id="gZb-Rv-yqS"/>
+                            <constraint firstItem="PV2-E3-jzX" firstAttribute="leading" secondItem="Xop-9T-Nd0" secondAttribute="leading" constant="107" id="jxT-8P-bid"/>
+                            <constraint firstItem="Xop-9T-Nd0" firstAttribute="trailing" secondItem="kgG-kh-g8Q" secondAttribute="trailing" constant="55" id="xVB-3i-Lai"/>
+                            <constraint firstItem="Xop-9T-Nd0" firstAttribute="trailing" secondItem="PV2-E3-jzX" secondAttribute="trailing" constant="106" id="zSR-FM-jvn"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Xop-9T-Nd0"/>
                     </view>
+                    <connections>
+                        <outlet property="ormH_1" destination="xeR-ni-nBb" id="44h-Ta-L4u"/>
+                        <outlet property="ormH_2" destination="fQ4-8c-1Ax" id="sav-PT-OrJ"/>
+                        <outlet property="ormN_1" destination="6NH-fl-DaH" id="mC6-KD-Wml"/>
+                        <outlet property="ormN_2" destination="6Fv-le-nHf" id="rat-qL-NA0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QWx-4r-ps1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -90,7 +130,9 @@
                                             <rect key="frame" x="20" y="4" width="92" height="36"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <state key="normal" title="Back"/>
+                                            <state key="normal" title="Back">
+                                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            </state>
                                             <connections>
                                                 <segue destination="TB0-Zx-64K" kind="unwind" unwindAction="prepareForUnwindWithSegue:" id="7Dj-UY-2t6"/>
                                             </connections>
@@ -176,4 +218,9 @@
             <point key="canvasLocation" x="1057" y="813"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ormH1.003" width="768" height="768"/>
+        <image name="ormN1.007" width="768" height="768"/>
+        <image name="play.fill" catalog="system" width="58" height="64"/>
+    </resources>
 </document>
