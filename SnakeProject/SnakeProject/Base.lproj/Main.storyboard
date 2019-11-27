@@ -18,6 +18,9 @@
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
                     <navigationItem key="navigationItem" id="AHR-cP-Z9J"/>
+                    <connections>
+                        <segue destination="ypo-Pp-2dO" kind="show" identifier="gameOverSegue" id="Jo3-5t-x3s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
@@ -93,7 +96,7 @@
         <!--Game Over View Controller-->
         <scene sceneID="1LQ-xR-kRm">
             <objects>
-                <viewController id="ypo-Pp-2dO" customClass="GameOverViewController" customModule="SnakeProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="ypo-Pp-2dO" customClass="GameOverViewController" customModule="SnakeProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ead-8T-g3h">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -109,6 +112,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="7hw-zE-YSk"/>
                     </view>
+                    <navigationItem key="navigationItem" id="S9A-la-bNp"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xoa-yA-cTI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

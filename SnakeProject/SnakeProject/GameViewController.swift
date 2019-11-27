@@ -18,6 +18,8 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+         NotificationCenter.default.addObserver(self, selector: #selector(goToGameOver), name: NSNotification.Name(rawValue: "gameOverSegue"), object: nil)
+        
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
             if let scene = SKScene(fileNamed: "GameScene") {
@@ -47,5 +49,9 @@ class GameViewController: UIViewController {
 
     override var prefersStatusBarHidden: Bool {
         return true
+    }
+    
+    @objc func goToGameOver() {
+        self.performSegue(withIdentifier: "gameOverSegue", sender: self)
     }
 }

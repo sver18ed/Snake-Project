@@ -12,6 +12,8 @@ import GameplayKit
 class GameScene: SKScene {
     
     var game: GameManager!
+    
+    
     var playerPositions: [(Int, Int)] = []
     var gameBG: SKShapeNode!
     var gameArray: [(node: SKShapeNode, x: Int, y: Int)] = []
@@ -20,6 +22,9 @@ class GameScene: SKScene {
     var upButton: SKShapeNode!
     var rightButton: SKShapeNode!
     var downButton: SKShapeNode!
+    
+    var currentScore: SKLabelNode!
+    var scorePos: CGPoint?
     
     
     override func didMove(to view: SKView) {
@@ -80,6 +85,14 @@ class GameScene: SKScene {
         
         downButton = getButton(name: "downButton", zPosition: 3, position: CGPoint(x: 0, y: (frame.size.height / -3) - 120), fillColor: SKColor.blue, topCorner: CGPoint(x: 0, y: -40), bottomCorner: CGPoint(x: 40, y: 40), middle: CGPoint(x: -40, y: 40))
         self.addChild(downButton)
+        
+        currentScore = SKLabelNode(fontNamed: "ArialRoundedMTBold")
+        currentScore.zPosition = 1
+        currentScore.position = CGPoint(x: 0, y: (frame.size.height / -2) + 60)
+        currentScore.fontSize = 40
+        currentScore.text = "Score: 0"
+        currentScore.fontColor = SKColor.white
+        self.addChild(currentScore)
     }
 
     private func createGameBoard(width: Int, height: Int) {
