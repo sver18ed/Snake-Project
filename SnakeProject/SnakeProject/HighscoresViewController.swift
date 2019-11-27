@@ -18,6 +18,8 @@ class HighscoresViewController: UITableViewController {
         downloadJson()
     }
     
+    
+    
     func downloadJson(){
         guard let downloadURL = url else {return}
         URLSession.shared.dataTask(with: downloadURL){data,urlResponse,error in
@@ -25,7 +27,6 @@ class HighscoresViewController: UITableViewController {
                 print("something is wrong")
                 return
             }
-            print("downloaded")
             do
             {
                 let decoder = JSONDecoder()
@@ -54,12 +55,7 @@ class HighscoresViewController: UITableViewController {
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return hs.count
          }
-         
-        override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-            return "Highscore"
-        }
-    
-    
+        
         override func tableView(_ tableView: UITableView,cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? TableViewCell {
                 cell.nameLabel.text = hs[indexPath.row].name
@@ -69,7 +65,7 @@ class HighscoresViewController: UITableViewController {
             
             return UITableViewCell()
         }
-      
+     
 }
 
 
