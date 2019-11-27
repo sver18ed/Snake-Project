@@ -16,7 +16,8 @@ class MainMenuViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func prepareForUnwind(segue:UIStoryboardSegue){}
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
