@@ -24,37 +24,17 @@ class GameViewController: UIViewController {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
                 
-                
-                
                 // Present the scene
                 view.presentScene(scene)
-                
             }
-            
-            
-//            var gameScene = GameScene()
-//            var gameManager = GameManager(scene: gameScene)
-//            gameScene.game = gameManager
-//
-//            gameScene.initializeGameView()
-//            gameScene.startGame()
-//            gameScene.didMove(to: view)
-            
-        
-            
-            
             view.ignoresSiblingOrder = true
-            
-            view.showsFPS = true
-            view.showsNodeCount = true
-            
-            
-            
+            //view.showsFPS = true
+            //view.showsNodeCount = true
         }
     }
 
     override var shouldAutorotate: Bool {
-        return true
+        return false
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {

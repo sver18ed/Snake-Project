@@ -9,27 +9,8 @@
 import SpriteKit
 import GameplayKit
 
-//struct Button {
-//    var name: String
-//    var zPosition: Int
-//    var position: CGPoint
-//    var fillColor: SKColor
-//    var topCorner: CGPoint
-//    var bottomCorner: CGPoint
-//    var middle: CGPoint
-//    var path: CGMutablePath
-//
-//    init(name: String, zPosition: Int, position: CGPoint, fillColor: SKColor, topCorner: CGPoint, bottomCorner: CGPoint, middle: CGPoint, path: CGMutablePath) {
-//
-//        self.name = name
-//        self.zPosition = zPosition
-//
-//    }
-//}
-
 class GameScene: SKScene {
     
-    //1
     var game: GameManager!
     var playerPositions: [(Int, Int)] = []
     var gameBG: SKShapeNode!
@@ -42,18 +23,15 @@ class GameScene: SKScene {
     
     
     override func didMove(to view: SKView) {
-        //2
         game = GameManager(scene: self)
         initializeGameView()
         startGame()
-        
     }
     
      override func update(_ currentTime: TimeInterval) {
         game.update(time: currentTime)
     }
     
-    //3
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             let location = touch.location(in: self)
@@ -76,18 +54,17 @@ class GameScene: SKScene {
         }
     }
     
-    //3
     public func initializeGameView() {
-        //5
+        
         let width = 600
         let height = 900
-        let rect = CGRect(x: -width / 2, y: -height / 2 + width / 3, width: width, height: height)
+        let rect = CGRect(x: -width / 2, y: (-height / 2 + width / 3) - 30, width: width, height: height)
         gameBG = SKShapeNode(rect: rect, cornerRadius: 0.02)
         gameBG.fillColor = SKColor.white
         gameBG.zPosition = 2
         gameBG.isHidden = true
         self.addChild(gameBG)
-        //6
+
         createGameBoard(width: width, height: height)
         
         //Create left, up, right & down buttons
@@ -106,11 +83,12 @@ class GameScene: SKScene {
     }
 
     private func createGameBoard(width: Int, height: Int) {
+        
         let cellWidth: CGFloat = 30
         let numRows = 30
         let numCols = 20
         var x = CGFloat(width / -2) + (cellWidth / 2)
-        var y = CGFloat(height / 2 + width / 3) - (cellWidth / 2)
+        var y = CGFloat(height / 2 + width / 3) - 30 - (cellWidth / 2)
         //loop through rows and columns, create cells
         for i in 0...numRows - 1 {
             for j in 0...numCols - 1 {
@@ -130,16 +108,14 @@ class GameScene: SKScene {
         }
     }
 
-    //4
     private func startGame() {
-        print("start game")
-        
         self.gameBG.isHidden = false
         self.gameBG.run(SKAction.scale(to: 1, duration: 0.4))
         self.game.initGame()
     }
     
     private func getButton(name: String, zPosition: CGFloat, position: CGPoint, fillColor: SKColor, topCorner: CGPoint, bottomCorner: CGPoint, middle: CGPoint) -> SKShapeNode {
+        
         let button = SKShapeNode()
         button.name = name
         button.zPosition = zPosition
@@ -155,5 +131,4 @@ class GameScene: SKScene {
         
         return button
     }
-    
 }
