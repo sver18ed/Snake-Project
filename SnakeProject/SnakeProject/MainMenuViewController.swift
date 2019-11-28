@@ -21,20 +21,30 @@ class MainMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.scene?.moveSnakeHorizontal()
+        self.scene?.moveSnakeVertical()
+        Timer.scheduledTimer(timeInterval: 3, target: self, selector:  #selector(MainMenuViewController.moveIt), userInfo: nil, repeats: true)
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func moveIt(){
+        self.scene?.moveSnakeHorizontal()
+        self.scene?.moveSnakeVertical()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        moveItHorizontal(ormH_1, 11)
+        /*moveItHorizontal(ormH_1, 11)
         moveItHorizontal(ormH_2, 13)
         moveItVertical(ormN_1, 12)
-        moveItVertical(ormN_2, 14)
+        moveItVertical(ormN_2, 14)*/
         
         self.scene = SnakeClass(size: CGSize(width: self.snakeScene.frame.size.width, height: self.snakeScene.frame.size.height))
         self.snakeScene.presentScene(scene)
-        self.scene?.moveSnake()
+        
+        self.scene?.moveSnakeHorizontal()
+        self.scene?.moveSnakeVertical()
+
     }
     
     @IBAction func playbuttonClicked(_ sender: Any) {
