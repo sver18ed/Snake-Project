@@ -10,17 +10,15 @@ import UIKit
 
 class HighscoresViewController: UITableViewController {
     final let url = URL(string: "https://api.myjson.com/bins/1eiflu")
-    var hs = [HighScoreJson]()
+    var hs = [HighScoreData]()
     
     @IBOutlet var theTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         downloadJson()
+        //updateUserData()
     }
-    
-    
-    
     func downloadJson(){
         guard let downloadURL = url else {return}
         URLSession.shared.dataTask(with: downloadURL){data,urlResponse,error in
@@ -32,7 +30,7 @@ class HighscoresViewController: UITableViewController {
             {
                 let decoder = JSONDecoder()
                 let downloadedHighscore = try decoder.decode(HighScores.self, from: data)
-                self.hs = downloadedHighscore.dict
+                self.hs = downloadedHighscore.highScore
                 DispatchQueue.main.async {
                     self.theTableView.reloadData()
                 }
@@ -41,17 +39,11 @@ class HighscoresViewController: UITableViewController {
             }
         }.resume()
     }
-    
-    struct highscoreInfo{
-            var name: String
-            var points: String
-        }
-    
-    
-        var objects = [highscoreInfo(name: "Håkan", points: "123")]
-
-        override func numberOfSections(in tableView: UITableView) -> Int {
-             return 1            }
+  
+    override func numberOfSections(in tableView: UITableView) -> Int {
+             return 1
+        
+    }
 
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return hs.count
@@ -59,6 +51,7 @@ class HighscoresViewController: UITableViewController {
         
         override func tableView(_ tableView: UITableView,cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? HighScoreCell {
+                
                 cell.nameLabel.text = hs[indexPath.row].name
                 cell.pointsLabel.text = hs[indexPath.row].points
                 return cell
@@ -68,5 +61,4 @@ class HighscoresViewController: UITableViewController {
         }
 
     
-
 }

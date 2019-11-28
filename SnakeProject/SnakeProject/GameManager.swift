@@ -98,6 +98,7 @@ class GameManager {
                 
                //goToGameOver()
                 print("end game")
+                //updateScore()
                 playerDirection = 4
                 goToGameOver()
             }
@@ -230,4 +231,14 @@ class GameManager {
     func goToGameOver() {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "gameOverSegue"), object: nil)
     }
+    
+   /* private func updateScore() {
+         if currentScore > UserDefaults.standard.integer(forKey: "bestScore") {
+              UserDefaults.standard.set(currentScore, forKey: "bestScore")
+         }
+         currentScore = 0
+         scene.currentScore.text = "Score: 0"
+         scene.bestScore.text = "Best Score: \(UserDefaults.standard.integer(forKey: "bestScore"))"
+    }*/
+    
 }

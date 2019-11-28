@@ -13,8 +13,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+       
+        
+        //store best score
+        let defaults = UserDefaults.standard
+        let defaultValue = ["bestScore": 0]
+        defaults.register(defaults: defaultValue)
+        
+        
+        
+        
+        
         // Override point for customization after application launch.
         return true
     }
