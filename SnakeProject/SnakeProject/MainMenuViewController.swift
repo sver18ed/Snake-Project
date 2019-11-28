@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SpriteKit
 
 class MainMenuViewController: UIViewController {
     @IBOutlet weak var ormH_1: UIImageView!
@@ -14,10 +15,13 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak var ormN_1: UIImageView!
     @IBOutlet weak var ormN_2: UIImageView!
     
+    @IBOutlet weak var snakeScene: SKView!
+    
+    var scene:SnakeClass?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewDidAppear(true)
+        
         // Do any additional setup after loading the view.
     }
     
@@ -27,6 +31,10 @@ class MainMenuViewController: UIViewController {
         moveItHorizontal(ormH_2, 13)
         moveItVertical(ormN_1, 12)
         moveItVertical(ormN_2, 14)
+        
+        self.scene = SnakeClass(size: CGSize(width: self.snakeScene.frame.size.width, height: self.snakeScene.frame.size.height))
+        self.snakeScene.presentScene(scene)
+        self.scene?.moveSnake()
     }
     
     @IBAction func playbuttonClicked(_ sender: Any) {

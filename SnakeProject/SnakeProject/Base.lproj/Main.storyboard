@@ -34,6 +34,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <skView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kPN-5T-LJT">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </skView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ormH1.003" translatesAutoresizingMaskIntoConstraints="NO" id="xeR-ni-nBb">
                                 <rect key="frame" x="-300" y="400" width="378" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -51,7 +55,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mah-wS-wyy">
-                                <rect key="frame" x="148" y="371" width="118" height="114"/>
+                                <rect key="frame" x="148" y="381" width="118" height="114"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="118" id="JKi-4d-EXr"/>
                                     <constraint firstAttribute="width" secondItem="Mah-wS-wyy" secondAttribute="height" multiplier="1:1" id="qCu-FM-mNm"/>
@@ -66,7 +70,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PV2-E3-jzX">
-                                <rect key="frame" x="107" y="298" width="201" height="33"/>
+                                <rect key="frame" x="107" y="308" width="201" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="fnR-Sh-YvU"/>
                                 </constraints>
@@ -79,7 +83,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Snake" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgG-kh-g8Q">
-                                <rect key="frame" x="55" y="194" width="304" height="96"/>
+                                <rect key="frame" x="55" y="204" width="304" height="96"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="96" id="oN8-8p-TZ3"/>
                                 </constraints>
@@ -94,7 +98,7 @@
                             <constraint firstItem="PV2-E3-jzX" firstAttribute="top" secondItem="kgG-kh-g8Q" secondAttribute="bottom" constant="8" id="Gd6-0d-fdI"/>
                             <constraint firstItem="Mah-wS-wyy" firstAttribute="centerX" secondItem="Gcy-Lp-GEI" secondAttribute="centerX" id="JNm-Jd-gHO"/>
                             <constraint firstItem="Mah-wS-wyy" firstAttribute="top" secondItem="PV2-E3-jzX" secondAttribute="bottom" constant="38" id="OCb-He-kff"/>
-                            <constraint firstItem="kgG-kh-g8Q" firstAttribute="top" secondItem="Xop-9T-Nd0" secondAttribute="top" constant="150" id="gZb-Rv-yqS"/>
+                            <constraint firstItem="kgG-kh-g8Q" firstAttribute="top" secondItem="Xop-9T-Nd0" secondAttribute="top" constant="160" id="gZb-Rv-yqS"/>
                             <constraint firstItem="PV2-E3-jzX" firstAttribute="leading" secondItem="Xop-9T-Nd0" secondAttribute="leading" constant="107" id="jxT-8P-bid"/>
                             <constraint firstItem="Xop-9T-Nd0" firstAttribute="trailing" secondItem="kgG-kh-g8Q" secondAttribute="trailing" constant="55" id="xVB-3i-Lai"/>
                             <constraint firstItem="Xop-9T-Nd0" firstAttribute="trailing" secondItem="PV2-E3-jzX" secondAttribute="trailing" constant="106" id="zSR-FM-jvn"/>
@@ -106,11 +110,12 @@
                         <outlet property="ormH_2" destination="fQ4-8c-1Ax" id="sav-PT-OrJ"/>
                         <outlet property="ormN_1" destination="6NH-fl-DaH" id="mC6-KD-Wml"/>
                         <outlet property="ormN_2" destination="6Fv-le-nHf" id="rat-qL-NA0"/>
+                        <outlet property="snakeScene" destination="kPN-5T-LJT" id="ejg-xi-Q4p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QWx-4r-ps1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135" y="102"/>
+            <point key="canvasLocation" x="134.78260869565219" y="101.78571428571428"/>
         </scene>
         <!--Highscores View Controller-->
         <scene sceneID="pMV-Wi-1mF">
