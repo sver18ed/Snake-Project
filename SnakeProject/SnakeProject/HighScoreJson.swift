@@ -27,6 +27,7 @@ class HighScoreData: Codable {
 
 }
 
+/*
 struct theHighScoreDict: Codable{
     var highScore: [UserData]
 }
@@ -39,6 +40,7 @@ struct UserData: Codable{
 func updateUserData(){
     
     //add existing json object + new user data to update the api
+    
     
     let userData = theHighScoreDict.init(highScore: [UserData(name: "Håkan", points: "123"), UserData(name: "Erik", points: "467"), UserData(name: "Andreas", points: "789")])
   
@@ -66,6 +68,6 @@ func updateUserData(){
             }
         }*/
     }.resume()
-}
+}*/
 
 
