@@ -18,13 +18,12 @@ class SnakeClass: SKScene {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
+    // MARK: - InitImage
     override init(size: CGSize) {
         super.init(size: size)
         self.backgroundColor = UIColor.white
         var frames:[SKTexture] = []
         var frames2:[SKTexture] = []
-        
         
         let snakeAtlas = SKTextureAtlas(named: "Sprites")
         let pic1 = snakeAtlas.textureNamed("snakeH_1")
@@ -40,11 +39,10 @@ class SnakeClass: SKScene {
         self.snakeFrames2 = frames2
     }
     
-    
+    // MARK: - moveSnakeHorizontal
     func moveSnakeHorizontal(){
         let texture = self.snakeFrames![0]
         let snake = SKSpriteNode(texture: texture)
-        
         snake.size = CGSize(width: 400, height: 400)
         
         let randomSnakeYPosition = GKRandomDistribution(lowestValue: 50, highestValue: (Int(self.frame.size.width)))
@@ -73,13 +71,11 @@ class SnakeClass: SKScene {
         let allAction = SKAction.sequence([moveAction, removeAction])
         
         snake.run(allAction)
-   
     }
-    
+    // MARK: - moveSnakeVertical
     func moveSnakeVertical(){
         let texture = self.snakeFrames2![0]
         let snake = SKSpriteNode(texture: texture)
-        
         snake.size = CGSize(width: 400, height: 400)
         
         let randomSnakeXPosition = GKRandomDistribution(lowestValue: 50, highestValue: (Int(self.frame.size.width)))
@@ -108,7 +104,5 @@ class SnakeClass: SKScene {
         let allAction = SKAction.sequence([moveAction, removeAction])
         
         snake.run(allAction)
-        
     }
-    
 }

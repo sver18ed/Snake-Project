@@ -14,13 +14,13 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak var snakeScene: SKView!
     
     var scene:SnakeClass?
+    var timer:Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.scene?.moveSnakeHorizontal()
         self.scene?.moveSnakeVertical()
         Timer.scheduledTimer(timeInterval: 4, target: self, selector:  #selector(MainMenuViewController.moveIt), userInfo: nil, repeats: true)
-        // Do any additional setup after loading the view.
     }
     
     @objc func moveIt(){
@@ -30,22 +30,21 @@ class MainMenuViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
         self.scene = SnakeClass(size: CGSize(width: self.snakeScene.frame.size.width, height: self.snakeScene.frame.size.height))
         self.snakeScene.presentScene(scene)
-        
         self.scene?.moveSnakeHorizontal()
         self.scene?.moveSnakeVertical()
-
     }
     
-    @IBAction func playbuttonClicked(_ sender: Any) {
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        timer?.invalidate()
     }
     
-    @IBAction func highscoresbuttonClicked(_ sender: Any) {
-    }
+    @IBAction func playbuttonClicked(_ sender: Any) {}
+    
+    @IBAction func highscoresbuttonClicked(_ sender: Any) {}
     
     @IBAction func prepareForUnwind(segue:UIStoryboardSegue){}
     
-  
 }

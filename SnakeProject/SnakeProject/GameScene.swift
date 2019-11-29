@@ -96,7 +96,7 @@ class GameScene: SKScene {
         
         currentScore = SKLabelNode(fontNamed: "ArialRoundedMTBold")
         currentScore.zPosition = 1
-        currentScore.position = CGPoint(x: 0, y: (frame.size.height / -2) + 60)
+        currentScore.position = CGPoint(x: 170, y: (frame.size.height / -2) + 325)
         currentScore.fontSize = 40
         DataHandler.instance.resetCurrentScore()
         currentScore.text = "Score: \(DataHandler.instance.currentScore)"

@@ -23,10 +23,9 @@ class GameOverViewController: UIViewController {
         super.viewDidLoad()
         self.scene?.moveSnakeHorizontal()
         self.scene?.moveSnakeVertical()
-        Timer.scheduledTimer(timeInterval: 5, target: self, selector:  #selector(GameOverViewController.moveIt), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 6, target: self, selector:  #selector(GameOverViewController.moveIt), userInfo: nil, repeats: true)
         bestScore.text = "Best Score: \(DataHandler.instance.bestScore)"
         currentScore.text = "Your Score: \(DataHandler.instance.currentScore)"
-        // Do any additional setup after loading the view.
     }
     
     @objc func moveIt(){
@@ -42,8 +41,5 @@ class GameOverViewController: UIViewController {
         
         self.scene?.moveSnakeHorizontal()
         self.scene?.moveSnakeVertical()
-
     }
-
-    
 }
