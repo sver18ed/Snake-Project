@@ -217,7 +217,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best Score: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qph-pB-9EE">
-                                <rect key="frame" x="134" y="247" width="149" height="35"/>
+                                <rect key="frame" x="84" y="247" width="199" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="hHJ-cp-EJ1"/>
                                 </constraints>
@@ -250,6 +250,7 @@
                             <constraint firstItem="7hw-zE-YSk" firstAttribute="trailing" secondItem="eU6-7q-Z6r" secondAttribute="trailing" constant="112" id="6R4-1A-th4"/>
                             <constraint firstItem="eU6-7q-Z6r" firstAttribute="top" secondItem="Qph-pB-9EE" secondAttribute="bottom" constant="8" id="85m-Ka-Gjl"/>
                             <constraint firstItem="7hw-zE-YSk" firstAttribute="trailing" secondItem="0eP-w3-9dy" secondAttribute="trailing" constant="29" id="9LM-Kv-wfG"/>
+                            <constraint firstItem="Qph-pB-9EE" firstAttribute="width" secondItem="eU6-7q-Z6r" secondAttribute="width" multiplier="1.05851" id="De9-MI-a7p"/>
                             <constraint firstItem="hcQ-2f-bQP" firstAttribute="leading" secondItem="7hw-zE-YSk" secondAttribute="leading" constant="149" id="Hul-3F-CwF"/>
                             <constraint firstItem="0eP-w3-9dy" firstAttribute="top" secondItem="7hw-zE-YSk" secondAttribute="top" constant="111" id="JJz-ue-uRg"/>
                             <constraint firstItem="8pD-Lk-1At" firstAttribute="top" secondItem="hcQ-2f-bQP" secondAttribute="bottom" constant="210" id="QcG-zC-ErQ"/>
@@ -261,12 +262,12 @@
                             <constraint firstItem="7hw-zE-YSk" firstAttribute="trailing" secondItem="Qph-pB-9EE" secondAttribute="trailing" constant="131" id="ocw-EX-7w8"/>
                             <constraint firstItem="hcQ-2f-bQP" firstAttribute="top" secondItem="eU6-7q-Z6r" secondAttribute="bottom" constant="139" id="s9t-fh-VRv"/>
                             <constraint firstItem="eU6-7q-Z6r" firstAttribute="top" secondItem="Qph-pB-9EE" secondAttribute="bottom" constant="8" id="xj5-VC-VjZ"/>
-                            <constraint firstItem="Qph-pB-9EE" firstAttribute="leading" secondItem="7hw-zE-YSk" secondAttribute="leading" constant="134" id="zcA-nJ-KTf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7hw-zE-YSk"/>
                     </view>
                     <navigationItem key="navigationItem" id="S9A-la-bNp"/>
                     <connections>
+                        <outlet property="bestScore" destination="Qph-pB-9EE" id="TSH-dG-PYX"/>
                         <outlet property="currentScore" destination="eU6-7q-Z6r" id="mqm-Gf-8T4"/>
                         <outlet property="snakeScene2" destination="yrY-BL-cdW" id="OUd-Ke-dqj"/>
                     </connections>

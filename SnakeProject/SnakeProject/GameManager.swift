@@ -98,7 +98,9 @@ class GameManager {
                 print("end game")
                 //updateScore()
                 playerDirection = 4
+                DataHandler.instance.setBestScore()
                 goToGameOver()
+                
             }
             
         }

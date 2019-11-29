@@ -98,7 +98,8 @@ class GameScene: SKScene {
         currentScore.zPosition = 1
         currentScore.position = CGPoint(x: 0, y: (frame.size.height / -2) + 60)
         currentScore.fontSize = 40
-        currentScore.text = "Score: 0"
+        DataHandler.instance.resetCurrentScore()
+        currentScore.text = "Score: \(DataHandler.instance.currentScore)"
         currentScore.fontColor = SKColor.white
         self.addChild(currentScore)
     }
