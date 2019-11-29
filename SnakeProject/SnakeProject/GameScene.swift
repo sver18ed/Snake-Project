@@ -26,6 +26,7 @@ class GameScene: SKScene {
     var currentScore: SKLabelNode!
     var scorePos: CGPoint?
     
+    // MARK: - didMove
     
     override func didMove(to view: SKView) {
         game = GameManager(scene: self)
@@ -33,9 +34,13 @@ class GameScene: SKScene {
         startGame()
     }
     
+    // MARK: - update
+    
      override func update(_ currentTime: TimeInterval) {
         game.update(time: currentTime)
     }
+    
+    // MARK: - touchesBegan
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
@@ -58,6 +63,8 @@ class GameScene: SKScene {
             }
         }
     }
+    
+    // MARK: - initializeGameView
     
     public func initializeGameView() {
         
@@ -95,6 +102,8 @@ class GameScene: SKScene {
         self.addChild(currentScore)
     }
 
+    // MARK: - createGameBoard
+    
     private func createGameBoard(width: Int, height: Int) {
         
         let cellWidth: CGFloat = 30
@@ -121,11 +130,15 @@ class GameScene: SKScene {
         }
     }
 
+    // MARK: - startGame
+    
     private func startGame() {
         self.gameBG.isHidden = false
         self.gameBG.run(SKAction.scale(to: 1, duration: 0.4))
         self.game.initGame()
     }
+    
+    // MARK: - getButton
     
     private func getButton(name: String, zPosition: CGFloat, position: CGPoint, fillColor: SKColor, topCorner: CGPoint, bottomCorner: CGPoint, middle: CGPoint) -> SKShapeNode {
         

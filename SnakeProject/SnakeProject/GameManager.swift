@@ -14,7 +14,7 @@ class GameManager {
     var nextTime: Double?
     var timeExtension: Double = 0.15
     
-    var playerDirection: Int = 4
+    var playerDirection: Int = 1
     
     var currentScore: Int = 0
     
@@ -22,27 +22,19 @@ class GameManager {
         self.scene = scene
     }
     
+    // MARK: - initGame
+    
     func initGame() {
         //starting player position
         scene.playerPositions.append((10, 10))
         scene.playerPositions.append((10, 11))
         scene.playerPositions.append((10, 12))
-        scene.playerPositions.append((10, 13))
-        scene.playerPositions.append((10, 14))
-        scene.playerPositions.append((10, 15))
-        scene.playerPositions.append((10, 16))
-        scene.playerPositions.append((10, 17))
-        scene.playerPositions.append((10, 18))
-        scene.playerPositions.append((10, 19))
-        scene.playerPositions.append((10, 20))
-        scene.playerPositions.append((10, 21))
-        scene.playerPositions.append((10, 22))
-        scene.playerPositions.append((10, 23))
-        scene.playerPositions.append((10, 24))
         
         renderChange()
         generateNewPoint()
     }
+    
+    // MARK: - checkForScore
     
     private func checkForScore() {
         if scene.scorePos != nil {
@@ -58,6 +50,8 @@ class GameManager {
         }
     }
     
+    // MARK: - generateNewPoint
+    
     private func generateNewPoint() {
         var randomX = CGFloat(arc4random_uniform(19))
         var randomY = CGFloat(arc4random_uniform(29))
@@ -69,6 +63,8 @@ class GameManager {
         scene.scorePos = CGPoint(x: randomX, y: randomY)
         
     }
+    
+    // MARK: - update
     
     func update(time: Double) {
         if nextTime == nil {
@@ -84,6 +80,8 @@ class GameManager {
             }
         }
     }
+    
+    // MARK: - finishanimation
     
     private func finishAnimation(){
         if playerDirection == 0 && scene.playerPositions.count > 0 {
@@ -108,6 +106,8 @@ class GameManager {
 
     }
     
+    // MARK: - checkForDeath
+    
     private func checkForDeath() {
         if scene.playerPositions.count > 0 {
             var arrayOfPositions = scene.playerPositions
@@ -118,6 +118,8 @@ class GameManager {
             }
         }
     }
+    
+    // MARK: - updatePlayerPosition
 
     private func updatePlayerPosition() {
         
@@ -179,6 +181,7 @@ class GameManager {
         renderChange()
     }
     
+    // MARK: - changeDirection
     
     func changeDirection(direction: String) {
         
@@ -207,6 +210,8 @@ class GameManager {
         }
     }
     
+    // MARK: - renderChange
+    
     func renderChange() {
         for (node, x, y) in scene.gameArray {
             if contains(a: scene.playerPositions, v: (x,y)) {
@@ -222,11 +227,15 @@ class GameManager {
         }
     }
     
+    // MARK: - contains
+    
     func contains(a:[(Int, Int)], v:(Int, Int)) -> Bool {
         let (c1, c2) = v
         for (v1, v2) in a { if v1 == c1 && v2 == c2 { return true } }
         return false
     }
+    
+    // MARK: - goToGameOver
     
     func goToGameOver() {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "gameOverSegue"), object: nil)
