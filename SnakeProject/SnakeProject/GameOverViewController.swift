@@ -13,6 +13,8 @@ class GameOverViewController: UIViewController {
 
     @IBOutlet weak var snakeScene2: SKView!
     
+    @IBOutlet weak var currentScore: UILabel!
+    
     var scene:SnakeClass?
     
     override func viewDidLoad() {
@@ -20,6 +22,7 @@ class GameOverViewController: UIViewController {
         self.scene?.moveSnakeHorizontal()
         self.scene?.moveSnakeVertical()
         Timer.scheduledTimer(timeInterval: 5, target: self, selector:  #selector(GameOverViewController.moveIt), userInfo: nil, repeats: true)
+        currentScore.text = "Your Score: \(DataHandler.instance.currentScore)"
         // Do any additional setup after loading the view.
     }
     
@@ -39,4 +42,5 @@ class GameOverViewController: UIViewController {
 
     }
 
+    
 }

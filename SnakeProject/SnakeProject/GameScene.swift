@@ -76,6 +76,7 @@ class GameScene: SKScene {
         gameBG.zPosition = 2
         gameBG.isHidden = true
         self.addChild(gameBG)
+        
 
         createGameBoard(width: width, height: height)
         

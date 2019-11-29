@@ -62,6 +62,15 @@ class GameViewController: UIViewController {
     // MARK: - goToGameOver
     
     @objc func goToGameOver() {
+        
+            
+        
         self.performSegue(withIdentifier: "gameOverSegue", sender: self)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? GameOverViewController {
+            
+        }
     }
 }
