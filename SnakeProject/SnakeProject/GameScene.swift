@@ -153,7 +153,6 @@ class GameScene: SKScene {
         let bottomCorner = bottomCorner
         let middle = middle
         let path = CGMutablePath()
-        path.addLine(to: topCorner)
         path.addLines(between: [topCorner, bottomCorner, middle])
         button.path = path
         
