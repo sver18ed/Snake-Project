@@ -8,7 +8,7 @@
 
 import UIKit
 
-let theApi = "https://api.myjson.com/bins/17c482"
+let theApi = "https://api.myjson.com/bins/j2xt6"
 
 class HighscoresViewController: UITableViewController {
     final let url = URL(string: theApi)
@@ -19,6 +19,7 @@ class HighscoresViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         downloadJson()
+        
         updateUserData()
     }
     
@@ -51,7 +52,8 @@ class HighscoresViewController: UITableViewController {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? HighScoreCell {
                 
                 cell.nameLabel.text = highScore[indexPath.row].name
-                cell.pointsLabel.text = highScore[indexPath.row].points
+                cell.pointsLabel.text = String(highScore[indexPath.row].points)
+                
                 return cell
             }
             
@@ -61,34 +63,8 @@ class HighscoresViewController: UITableViewController {
     
 
     func updateUserData(){
-        
-        let newUserData2 = HighScores.init(highScore: [HighScoreData(name: "håkan", points: "321")])
-    
-        
-        let newUserData = [HighScoreData.init(name: "test ", points: "123")]
-        highScore.append(contentsOf: newUserData2.highScore)
-        
-        /*
-        if let url = URL(string: theApi){
-            URLSession.shared.dataTask(with: url){ data, response, error in
-                if let data = data {
-                    do {
-                        let res = try JSONDecoder().decode(HighScores.self, from: data)
-                        res.self.highScore.append(contentsOf: newUserData)
-                        for i in merge{
-                            print(i.name + i.points)
-                            self.userData[i] = HighScoreData.init(name: i.name, points: i.points)
-                            
-                        }
-                        self.sendData()
-                    } catch let error{
-                            print(error)
-                        }
-                    }
-                
-                }.resume()
-        }*/
-        
+        let newUserData = [HighScoreData.init(name: "test", points: 4)]
+        highScore.append(contentsOf: newUserData)
     }
   
     func sendData(){
@@ -96,7 +72,7 @@ class HighscoresViewController: UITableViewController {
         var request = URLRequest(url: url)
         request.httpMethod = "PUT"
         request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-        guard let httpBody = try? JSONEncoder().encode(self.highScore) else {return}
+        guard let httpBody = try? JSONEncoder().encode(HighScores.init(highScore: self.highScore)) else {return}
         
         request.httpBody = httpBody
 
@@ -106,5 +82,12 @@ class HighscoresViewController: UITableViewController {
     }
     
     
+        
 }
+   
+
+   
+  
+    
+
 

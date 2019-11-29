@@ -18,56 +18,14 @@ class HighScores: Codable{
 
 class HighScoreData: Codable {
     let name: String
-    let points: String
+    let points: Int
     
-    init(name: String, points: String){
+    init(name: String, points: Int){
         self.name = name
         self.points = points
     }
 
 }
 
-/*
-struct theHighScoreDict: Codable{
-    var highScore: [UserData]
-}
-
-struct UserData: Codable{
-    var name: String
-    var points: String
-}
-
-func updateUserData(){
-    
-    //add existing json object + new user data to update the api
-    
-    
-    let userData = theHighScoreDict.init(highScore: [UserData(name: "Håkan", points: "123"), UserData(name: "Erik", points: "467"), UserData(name: "Andreas", points: "789")])
-  
-    
-    guard let url = URL(string: "https://api.myjson.com/bins/1eiflu") else { return }
-    var request = URLRequest(url: url)
-    request.httpMethod = "PUT"
-    request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-    guard let httpBody = try? JSONEncoder().encode(userData) else {return}
-    
-    request.httpBody = httpBody
-
-    let session = URLSession.shared
-    session.dataTask(with: request) { (data, response, error) in
-        //if let response = response {
-            //response
-        //}
-
-       /* if let data = data {
-            do {
-                let json = try JSONSerialization.jsonObject(with: data, options: [])
-                print(json)
-            } catch {
-                print(error)
-            }
-        }*/
-    }.resume()
-}*/
 
 
