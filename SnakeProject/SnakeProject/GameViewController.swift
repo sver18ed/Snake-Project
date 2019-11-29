@@ -68,9 +68,4 @@ class GameViewController: UIViewController {
         self.performSegue(withIdentifier: "gameOverSegue", sender: self)
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? GameOverViewController {
-            
-        }
-    }
 }
