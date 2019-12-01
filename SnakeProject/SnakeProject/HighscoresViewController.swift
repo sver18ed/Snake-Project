@@ -8,19 +8,20 @@
 
 import UIKit
 
-let theApi = "https://api.myjson.com/bins/j2xt6"
+let theApi = "https://api.myjson.com/bins/1at7dy"
 
 class HighscoresViewController: UITableViewController {
     final let url = URL(string: theApi)
     var highScore = [HighScoreData]()
+    var points = GameOverViewController()
+    
     
     @IBOutlet var theTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         downloadJson()
-        
-        updateUserData()
+        //updateUserData()
     }
     
     func downloadJson(){
@@ -36,6 +37,7 @@ class HighscoresViewController: UITableViewController {
                 let downloadedHighscore = try decoder.decode(HighScores.self, from: data)
                 self.highScore.append(contentsOf: downloadedHighscore.highScore)
                 self.sendData()
+                self.highScore = self.highScore.sorted(by: { $0.points > $1.points })
                 DispatchQueue.main.async {
                     self.theTableView.reloadData()
                 }
@@ -63,8 +65,12 @@ class HighscoresViewController: UITableViewController {
     
 
     func updateUserData(){
-        let newUserData = [HighScoreData.init(name: "test", points: 4)]
+        
+
+        
+        let newUserData = [HighScoreData.init(name: "point" , points: 3)]
         highScore.append(contentsOf: newUserData)
+    
     }
   
     func sendData(){
@@ -81,7 +87,7 @@ class HighscoresViewController: UITableViewController {
         }.resume()
     }
     
-    
+   
         
 }
    

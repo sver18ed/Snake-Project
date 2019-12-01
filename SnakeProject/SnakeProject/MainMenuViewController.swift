@@ -15,7 +15,7 @@ class MainMenuViewController: UIViewController {
     
     var scene:SnakeClass?
     var timer:Timer?
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         self.scene?.moveSnakeHorizontal()
@@ -27,7 +27,7 @@ class MainMenuViewController: UIViewController {
         self.scene?.moveSnakeHorizontal()
         self.scene?.moveSnakeVertical()
     }
-    
+  
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.scene = SnakeClass(size: CGSize(width: self.snakeScene.frame.size.width, height: self.snakeScene.frame.size.height))

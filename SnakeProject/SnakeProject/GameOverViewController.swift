@@ -42,4 +42,7 @@ class GameOverViewController: UIViewController {
         self.scene?.moveSnakeHorizontal()
         self.scene?.moveSnakeVertical()
     }
+    
+    
 }
+
