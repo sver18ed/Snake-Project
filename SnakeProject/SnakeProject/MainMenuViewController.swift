@@ -18,27 +18,27 @@ class MainMenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.scene?.moveSnakeHorizontal()
-        self.scene?.moveSnakeVertical()
-        Timer.scheduledTimer(timeInterval: 4, target: self, selector:  #selector(MainMenuViewController.moveIt), userInfo: nil, repeats: true)
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        timer = Timer.scheduledTimer(timeInterval: 6, target: self, selector:  #selector(MainMenuViewController.moveIt), userInfo: nil, repeats: true)
+        self.scene = SnakeClass(size: CGSize(width: self.snakeScene.frame.size.width, height: self.snakeScene.frame.size.height))
+        self.snakeScene.presentScene(scene)
+        moveIt()
+        print("two snakes")
+    }
+    
     @objc func moveIt(){
         self.scene?.moveSnakeHorizontal()
         self.scene?.moveSnakeVertical()
-    }
-  
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.scene = SnakeClass(size: CGSize(width: self.snakeScene.frame.size.width, height: self.snakeScene.frame.size.height))
-        self.snakeScene.presentScene(scene)
-        self.scene?.moveSnakeHorizontal()
-        self.scene?.moveSnakeVertical()
+        print("many snakes in loop")
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         timer?.invalidate()
+        print("timer deactivate")
     }
     
     @IBAction func playbuttonClicked(_ sender: Any) {}
