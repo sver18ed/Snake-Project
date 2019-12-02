@@ -249,16 +249,37 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QnW-Jd-dO6">
+                                <rect key="frame" x="132" y="630" width="150" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPp-J9-X5t">
+                                <rect key="frame" x="174" y="672" width="67" height="30"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" title="Set Name">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="setNameButton:" destination="ypo-Pp-2dO" eventType="touchUpInside" id="sXY-XN-sUD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="HPp-J9-X5t" firstAttribute="top" secondItem="QnW-Jd-dO6" secondAttribute="bottom" constant="8" id="1AX-RI-daE"/>
+                            <constraint firstItem="7hw-zE-YSk" firstAttribute="trailing" secondItem="QnW-Jd-dO6" secondAttribute="trailing" constant="132" id="2ef-sR-FOx"/>
                             <constraint firstItem="Qph-pB-9EE" firstAttribute="centerX" secondItem="ead-8T-g3h" secondAttribute="centerX" id="5JV-bL-e29"/>
                             <constraint firstItem="0eP-w3-9dy" firstAttribute="leading" secondItem="7hw-zE-YSk" secondAttribute="leading" constant="20" id="RQw-lr-xMb"/>
                             <constraint firstItem="8pD-Lk-1At" firstAttribute="centerX" secondItem="ead-8T-g3h" secondAttribute="centerX" id="TmO-6t-aGi"/>
                             <constraint firstItem="8pD-Lk-1At" firstAttribute="top" secondItem="hcQ-2f-bQP" secondAttribute="bottom" constant="65" id="Vxq-T7-OEp"/>
                             <constraint firstItem="hcQ-2f-bQP" firstAttribute="top" secondItem="0eP-w3-9dy" secondAttribute="bottom" constant="120" id="WJr-Va-rWJ"/>
                             <constraint firstItem="7hw-zE-YSk" firstAttribute="trailing" secondItem="0eP-w3-9dy" secondAttribute="trailing" constant="20" id="WU7-xu-fd8"/>
+                            <constraint firstItem="7hw-zE-YSk" firstAttribute="trailing" secondItem="HPp-J9-X5t" secondAttribute="trailing" constant="173" id="XLD-6i-Nw0"/>
+                            <constraint firstItem="QnW-Jd-dO6" firstAttribute="leading" secondItem="7hw-zE-YSk" secondAttribute="leading" constant="132" id="YbD-Uc-sBP"/>
                             <constraint firstItem="hcQ-2f-bQP" firstAttribute="centerX" secondItem="ead-8T-g3h" secondAttribute="centerX" id="ZYX-5S-mmW"/>
+                            <constraint firstItem="HPp-J9-X5t" firstAttribute="leading" secondItem="7hw-zE-YSk" secondAttribute="leading" constant="174" id="bjj-9I-Sk4"/>
+                            <constraint firstItem="7hw-zE-YSk" firstAttribute="bottom" secondItem="HPp-J9-X5t" secondAttribute="bottom" constant="160" id="kTy-xd-AzU"/>
                             <constraint firstItem="hcQ-2f-bQP" firstAttribute="centerY" secondItem="ead-8T-g3h" secondAttribute="centerY" id="qXR-LO-9Ll"/>
                             <constraint firstItem="Qph-pB-9EE" firstAttribute="top" secondItem="0eP-w3-9dy" secondAttribute="bottom" constant="25" id="raJ-rr-vxV"/>
                             <constraint firstAttribute="bottom" secondItem="yrY-BL-cdW" secondAttribute="bottom" id="tRX-4T-EUM"/>
@@ -274,12 +295,13 @@
                     <connections>
                         <outlet property="bestScore" destination="Qph-pB-9EE" id="TSH-dG-PYX"/>
                         <outlet property="currentScore" destination="eU6-7q-Z6r" id="mqm-Gf-8T4"/>
+                        <outlet property="nameField" destination="QnW-Jd-dO6" id="CLy-qb-WGm"/>
                         <outlet property="snakeScene2" destination="yrY-BL-cdW" id="OUd-Ke-dqj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xoa-yA-cTI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1053.5999999999999" y="812.74362818590714"/>
+            <point key="canvasLocation" x="1050.7246376811595" y="812.27678571428567"/>
         </scene>
     </scenes>
     <resources>
@@ -287,8 +309,7 @@
         <image name="rectangle.fill" catalog="system" width="64" height="46"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Jo3-5t-x3s"/>
         <segue reference="Xzk-Al-fK7"/>
-        <segue reference="0iF-S0-rpG"/>
+        <segue reference="m1z-lO-dhE"/>
     </inferredMetricsTieBreakers>
 </document>

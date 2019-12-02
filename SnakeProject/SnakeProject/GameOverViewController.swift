@@ -17,15 +17,21 @@ class GameOverViewController: UIViewController {
     
     @IBOutlet weak var bestScore: UILabel!
     
+    @IBOutlet weak var nameField: UITextField!
+    
     var scene:SnakeClass?
+    var name: String?
+    var points: String?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.scene?.moveSnakeHorizontal()
-        self.scene?.moveSnakeVertical()
-        Timer.scheduledTimer(timeInterval: 6, target: self, selector:  #selector(GameOverViewController.moveIt), userInfo: nil, repeats: true)
+          self.scene?.moveSnakeHorizontal()
+          self.scene?.moveSnakeVertical()
+          Timer.scheduledTimer(timeInterval: 6, target: self, selector:  #selector(GameOverViewController.moveIt), userInfo: nil, repeats: true)
         bestScore.text = "Best Score: \(DataHandler.instance.bestScore)"
         currentScore.text = "Your Score: \(DataHandler.instance.currentScore)"
+        points = "\(DataHandler.instance.currentScore)"
     }
     
     @objc func moveIt(){
@@ -43,6 +49,20 @@ class GameOverViewController: UIViewController {
         self.scene?.moveSnakeVertical()
     }
     
+
+    @IBAction func setNameButton(_ sender: Any) {
+        name = nameField.text
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as? HighscoresViewController
+        destination?.setName = name
+        destination?.setPoints = points
+        
+    }
     
 }
+
+
 

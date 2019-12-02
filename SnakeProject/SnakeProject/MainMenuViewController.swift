@@ -15,14 +15,14 @@ class MainMenuViewController: UIViewController {
     
     var scene:SnakeClass?
     var timer:Timer?
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.scene?.moveSnakeHorizontal()
         self.scene?.moveSnakeVertical()
         Timer.scheduledTimer(timeInterval: 4, target: self, selector:  #selector(MainMenuViewController.moveIt), userInfo: nil, repeats: true)
     }
-    
+
     @objc func moveIt(){
         self.scene?.moveSnakeHorizontal()
         self.scene?.moveSnakeVertical()

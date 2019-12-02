@@ -13,15 +13,15 @@ let theApi = "https://api.myjson.com/bins/1at7dy"
 class HighscoresViewController: UITableViewController {
     final let url = URL(string: theApi)
     var highScore = [HighScoreData]()
-    var points = GameOverViewController()
-    
+    var setName: String?
+    var setPoints: String?
     
     @IBOutlet var theTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         downloadJson()
-        //updateUserData()
+        updateUserData()
     }
     
     func downloadJson(){
@@ -62,17 +62,12 @@ class HighscoresViewController: UITableViewController {
             return UITableViewCell()
         }
     
-    
-
     func updateUserData(){
-        
-
-        
-        let newUserData = [HighScoreData.init(name: "point" , points: 3)]
+        let newUserData = [HighScoreData.init(name: self.setName ?? "" , points: Int(self.setPoints ?? "") ?? 0)]
         highScore.append(contentsOf: newUserData)
     
     }
-  
+
     func sendData(){
         guard let url = URL(string: theApi) else { return }
         var request = URLRequest(url: url)
@@ -86,8 +81,8 @@ class HighscoresViewController: UITableViewController {
         session.dataTask(with: request) { (data, response, error) in
         }.resume()
     }
+
     
-   
         
 }
    
