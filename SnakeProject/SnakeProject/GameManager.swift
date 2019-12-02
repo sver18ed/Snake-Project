@@ -98,6 +98,8 @@ class GameManager {
                 print("end game")
                 //updateScore()
                 playerDirection = 4
+                renderChange()
+                self.scene.isHidden = true
                 DataHandler.instance.setBestScore()
                 goToGameOver()
                 
