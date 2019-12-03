@@ -25,9 +25,20 @@ class GameOverViewController: UIViewController {
     var points: String?
     
     
-    override func viewDidLoad() {
+     override func viewDidLoad() {
         super.viewDidLoad()
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
         
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.doneIsClicked))
+        
+        toolbar.setItems([doneButton], animated: true)
+        nameField.inputAccessoryView = toolbar
+
+    }
+    
+    @objc func doneIsClicked(){
+        view.endEditing(true)
     }
     
      override func viewDidAppear(_ animated: Bool) {
@@ -51,7 +62,6 @@ class GameOverViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         timer?.invalidate()
-        self.snakeScene2.removeFromSuperview()
         print("timer deactivate")
     }
 
