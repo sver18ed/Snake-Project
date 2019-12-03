@@ -17,7 +17,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
-                    <navigationItem key="navigationItem" id="AHR-cP-Z9J"/>
                     <connections>
                         <segue destination="ypo-Pp-2dO" kind="show" identifier="gameOverSegue" id="Jo3-5t-x3s"/>
                     </connections>
@@ -314,6 +313,7 @@
         <image name="rectangle.fill" catalog="system" width="64" height="46"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Jo3-5t-x3s"/>
         <segue reference="Xzk-Al-fK7"/>
         <segue reference="0iF-S0-rpG"/>
     </inferredMetricsTieBreakers>

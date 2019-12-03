@@ -38,6 +38,7 @@ class MainMenuViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         timer?.invalidate()
+        self.snakeScene.removeFromSuperview()
         print("timer deactivate")
     }
     

@@ -12,12 +12,14 @@ class DataHandler {
     
     static let instance = DataHandler()
     var currentScore: Int = 0
-    var bestScore: Int = 0
+    var bestScore: Int = UserDefaults.standard.integer(forKey: "bestScore")
     
     func setBestScore() {
-        if currentScore > bestScore{
+        if currentScore > bestScore {
+            UserDefaults.standard.set(currentScore, forKey: "bestScore")
             bestScore = currentScore
         }
+       
     }
     func resetCurrentScore() {
         currentScore = 0

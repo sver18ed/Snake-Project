@@ -62,11 +62,8 @@ class GameViewController: UIViewController {
     // MARK: - goToGameOver
     
     @objc func goToGameOver() {
-        
-            
-        
+
         self.performSegue(withIdentifier: "gameOverSegue", sender: self)
     }
-
 
 }
