@@ -8,7 +8,7 @@
 
 import UIKit
 
-let theApi = "https://api.myjson.com/bins/1at7dy"
+let theApi = "https://api.myjson.com/bins/1h3frg"
 
 class HighscoresViewController: UITableViewController {
     final let url = URL(string: theApi)
@@ -63,8 +63,10 @@ class HighscoresViewController: UITableViewController {
         }
     
     func updateUserData(){
-        let newUserData = [HighScoreData.init(name: self.setName ?? "" , points: Int(self.setPoints ?? "") ?? 0)]
-        highScore.append(contentsOf: newUserData)
+        if setName != nil {
+            let newUserData = [HighScoreData.init(name: self.setName ?? "" , points: Int(self.setPoints ?? "") ?? 0)]
+            highScore.append(contentsOf: newUserData)
+        }
     
     }
 
