@@ -38,4 +38,8 @@ class SnakeProjectTests: XCTestCase {
         XCTAssertEqual(frames2.count, 2, "The Picture assets for Vertical weren't found, the proper pictures are missing.")
     }
 
+    
+    func testNameField(){
+        //
+    }
 }

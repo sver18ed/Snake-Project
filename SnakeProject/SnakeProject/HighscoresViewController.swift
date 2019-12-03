@@ -47,7 +47,12 @@ class HighscoresViewController: UITableViewController {
         }.resume()
     }
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return highScore.count
+            if highScore.count > 10{
+                return 10
+            }
+            else {
+                return highScore.count
+            }
          }
         
         override func tableView(_ tableView: UITableView,cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -64,10 +69,11 @@ class HighscoresViewController: UITableViewController {
     
     func updateUserData(){
         if setName != nil {
-            let newUserData = [HighScoreData.init(name: self.setName ?? "" , points: Int(self.setPoints ?? "") ?? 0)]
-            highScore.append(contentsOf: newUserData)
+            if setName != ""{
+                let newUserData = [HighScoreData.init(name: self.setName ?? "" , points: Int(self.setPoints ?? "") ?? 0)]
+                highScore.append(contentsOf: newUserData)
+            }
         }
-    
     }
 
     func sendData(){
@@ -83,9 +89,7 @@ class HighscoresViewController: UITableViewController {
         session.dataTask(with: request) { (data, response, error) in
         }.resume()
     }
-
-    
-        
+      
 }
    
 

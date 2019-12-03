@@ -67,7 +67,9 @@ class GameOverViewController: UIViewController {
 
     @IBAction func setNameButton(_ sender: Any) {
         name = nameField.text
-        
+        if name != ""{
+            performSegue(withIdentifier: "highScoreSegue", sender: self)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
