@@ -51,7 +51,6 @@ class GameOverViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         timer?.invalidate()
-        self.snakeScene2.removeFromSuperview()
         print("timer deactivate")
     }
 
