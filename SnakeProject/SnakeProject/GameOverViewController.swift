@@ -12,13 +12,14 @@ import SpriteKit
 class GameOverViewController: UIViewController {
 
     
+    @IBOutlet weak var snakeScene2: SKView!
     @IBOutlet weak var currentScore: UILabel!
     
     @IBOutlet weak var bestScore: UILabel!
     
     @IBOutlet weak var nameField: UITextField!
     
-    
+    var scene2:SnakeClass?
     var name: String?
     var points: String?
     
@@ -44,8 +45,25 @@ class GameOverViewController: UIViewController {
         bestScore.text = "Local Best Score: \(DataHandler.instance.bestScore)"
         currentScore.text = "Your Score: \(DataHandler.instance.currentScore)"
         points = "\(DataHandler.instance.currentScore)"
+        self.scene2 = SnakeClass(size: CGSize(width: self.snakeScene2.frame.size.width, height: self.snakeScene2.frame.size.height))
+        self.snakeScene2.presentScene(scene2)
     }
     
+    override func becomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake{
+            let number = Int.random(in: 0 ..< 10)
+            if number % 2 == 0{
+                self.scene2?.moveSnakeHorizontal()
+            }
+            else{
+                self.scene2?.moveSnakeVertical()
+            }
+        }
+    }
 
     @IBAction func setNameButton(_ sender: Any) {
         name = nameField.text

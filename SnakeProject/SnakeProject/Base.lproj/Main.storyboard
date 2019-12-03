@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wRG-E4-vqT">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,7 +12,7 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="BV1-FR-VrT" customClass="GameViewController" customModule="SnakeProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
@@ -30,14 +30,14 @@
             <objects>
                 <viewController id="wRG-E4-vqT" customClass="MainMenuViewController" customModule="SnakeProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gcy-Lp-GEI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kPN-5T-LJT">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </skView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mah-wS-wyy">
-                                <rect key="frame" x="127.5" y="275" width="120" height="116.5"/>
+                                <rect key="frame" x="147" y="390" width="120" height="116"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Mah-wS-wyy" secondAttribute="height" multiplier="1:1" id="765-to-zvw"/>
                                     <constraint firstAttribute="height" constant="120" id="r8X-yF-wJh"/>
@@ -52,7 +52,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Snake" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgG-kh-g8Q">
-                                <rect key="frame" x="55" y="127.5" width="265" height="96"/>
+                                <rect key="frame" x="55" y="242" width="304" height="96"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="96" id="5Te-69-xzv"/>
                                 </constraints>
@@ -61,7 +61,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PV2-E3-jzX">
-                                <rect key="frame" x="100" y="459.5" width="175" height="47.5"/>
+                                <rect key="frame" x="100" y="574.66666666666663" width="214" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ywI-fK-KWG"/>
                                 </constraints>
@@ -105,17 +105,17 @@
             <objects>
                 <tableViewController modalPresentationStyle="fullScreen" id="l3w-Kn-zkV" customClass="HighscoresViewController" customModule="SnakeProject" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ecj-yA-BHd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="9v5-pV-cwZ">
-                            <rect key="frame" x="0.0" y="0.0" width="430" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
                                 <navigationItem title="Highscore" id="Thb-MK-hjo">
                                     <barButtonItem key="leftBarButtonItem" id="xJB-oE-A3a">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QuD-eV-6AB">
-                                            <rect key="frame" x="16" y="4" width="92" height="36"/>
+                                            <rect key="frame" x="20" y="4" width="92" height="36"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <state key="normal" title="Back">
@@ -131,20 +131,20 @@
                         </navigationBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="74" id="9Ic-Os-asn" customClass="HighScoreCell" customModule="SnakeProject" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="74"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="74"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Ic-Os-asn" id="FeI-WZ-tia">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="74"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLG-d1-lhr">
-                                            <rect key="frame" x="80" y="20" width="255" height="34"/>
+                                            <rect key="frame" x="80" y="20" width="294" height="34"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vwF-2o-JSu">
-                                            <rect key="frame" x="36" y="31" width="263" height="12"/>
+                                            <rect key="frame" x="40" y="31" width="294" height="12"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -187,11 +187,14 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="ypo-Pp-2dO" customClass="GameOverViewController" customModule="SnakeProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ead-8T-g3h">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OyV-i3-giq">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </skView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Over!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eP-w3-9dy">
-                                <rect key="frame" x="20" y="69.5" width="335" height="80"/>
+                                <rect key="frame" x="20" y="184" width="374" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="zMG-Pi-mhL"/>
                                 </constraints>
@@ -200,7 +203,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8pD-Lk-1At">
-                                <rect key="frame" x="100" y="444.5" width="175" height="47.5"/>
+                                <rect key="frame" x="100" y="559.66666666666663" width="214" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="gvg-Fa-Dfx"/>
                                 </constraints>
@@ -214,7 +217,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcQ-2f-bQP">
-                                <rect key="frame" x="127.5" y="275" width="120" height="116.5"/>
+                                <rect key="frame" x="147" y="390" width="120" height="116"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hcQ-2f-bQP" secondAttribute="height" multiplier="1:1" id="oWW-Ee-NR8"/>
                                     <constraint firstAttribute="height" constant="120" id="ytw-UQ-Q8t"/>
@@ -229,7 +232,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your score: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eU6-7q-Z6r">
-                                <rect key="frame" x="20" y="219.5" width="335" height="24"/>
+                                <rect key="frame" x="20" y="334" width="374" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="aSI-M1-Isp"/>
                                 </constraints>
@@ -238,7 +241,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best Score: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qph-pB-9EE">
-                                <rect key="frame" x="20" y="174.5" width="335" height="35"/>
+                                <rect key="frame" x="20" y="289" width="374" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="MIe-f3-Y9d"/>
                                 </constraints>
@@ -247,7 +250,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QnW-Jd-dO6">
-                                <rect key="frame" x="100" y="533.5" width="175" height="35"/>
+                                <rect key="frame" x="100" y="648" width="214" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="a3L-BA-MyH"/>
                                 </constraints>
@@ -255,7 +258,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPp-J9-X5t">
-                                <rect key="frame" x="120" y="579.5" width="135" height="32.5"/>
+                                <rect key="frame" x="120" y="694.66666666666663" width="174" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="Jsl-FR-irx"/>
                                 </constraints>
@@ -273,15 +276,18 @@
                         <constraints>
                             <constraint firstItem="hcQ-2f-bQP" firstAttribute="centerY" secondItem="ead-8T-g3h" secondAttribute="centerY" id="0GI-gH-LOT"/>
                             <constraint firstItem="8pD-Lk-1At" firstAttribute="top" secondItem="hcQ-2f-bQP" secondAttribute="bottom" constant="50" id="3eI-7k-LYR"/>
+                            <constraint firstItem="OyV-i3-giq" firstAttribute="top" secondItem="ead-8T-g3h" secondAttribute="top" id="9V5-nE-wOa"/>
                             <constraint firstItem="0eP-w3-9dy" firstAttribute="leading" secondItem="7hw-zE-YSk" secondAttribute="leading" constant="20" id="9rm-NN-ngI"/>
                             <constraint firstItem="Qph-pB-9EE" firstAttribute="leading" secondItem="7hw-zE-YSk" secondAttribute="leading" constant="20" id="AGz-W9-cEG"/>
                             <constraint firstItem="eU6-7q-Z6r" firstAttribute="top" secondItem="Qph-pB-9EE" secondAttribute="bottom" constant="10" id="EBp-Ge-Cy5"/>
                             <constraint firstItem="8pD-Lk-1At" firstAttribute="leading" secondItem="7hw-zE-YSk" secondAttribute="leading" constant="100" id="HFf-ww-Zk0"/>
                             <constraint firstItem="HPp-J9-X5t" firstAttribute="leading" secondItem="7hw-zE-YSk" secondAttribute="leading" constant="120" id="IC3-Tz-hja"/>
                             <constraint firstItem="QnW-Jd-dO6" firstAttribute="leading" secondItem="7hw-zE-YSk" secondAttribute="leading" constant="100" id="J4D-KM-fzi"/>
+                            <constraint firstAttribute="bottom" secondItem="OyV-i3-giq" secondAttribute="bottom" id="Min-Bv-Q8C"/>
                             <constraint firstItem="7hw-zE-YSk" firstAttribute="trailing" secondItem="QnW-Jd-dO6" secondAttribute="trailing" constant="100" id="VrU-Xg-fEs"/>
                             <constraint firstItem="7hw-zE-YSk" firstAttribute="trailing" secondItem="eU6-7q-Z6r" secondAttribute="trailing" constant="20" id="Xfd-CA-p9r"/>
                             <constraint firstItem="7hw-zE-YSk" firstAttribute="trailing" secondItem="Qph-pB-9EE" secondAttribute="trailing" constant="20" id="ZsS-Wc-nGq"/>
+                            <constraint firstAttribute="trailing" secondItem="OyV-i3-giq" secondAttribute="trailing" id="b38-Bi-wg5"/>
                             <constraint firstItem="Qph-pB-9EE" firstAttribute="top" secondItem="0eP-w3-9dy" secondAttribute="bottom" constant="25" id="cc0-TR-Lbv"/>
                             <constraint firstItem="HPp-J9-X5t" firstAttribute="top" secondItem="QnW-Jd-dO6" secondAttribute="bottom" constant="10" id="cug-XT-Qaq"/>
                             <constraint firstItem="eU6-7q-Z6r" firstAttribute="leading" secondItem="7hw-zE-YSk" secondAttribute="leading" constant="20" id="d5b-3E-OHD"/>
@@ -289,6 +295,7 @@
                             <constraint firstItem="hcQ-2f-bQP" firstAttribute="centerX" secondItem="ead-8T-g3h" secondAttribute="centerX" id="dt8-mD-ywI"/>
                             <constraint firstItem="7hw-zE-YSk" firstAttribute="trailing" secondItem="HPp-J9-X5t" secondAttribute="trailing" constant="120" id="mOz-TD-bEP"/>
                             <constraint firstItem="hcQ-2f-bQP" firstAttribute="top" secondItem="eU6-7q-Z6r" secondAttribute="bottom" constant="30" id="n6F-5h-9Lf"/>
+                            <constraint firstItem="OyV-i3-giq" firstAttribute="leading" secondItem="ead-8T-g3h" secondAttribute="leading" id="ot8-JW-Oqx"/>
                             <constraint firstItem="7hw-zE-YSk" firstAttribute="trailing" secondItem="0eP-w3-9dy" secondAttribute="trailing" constant="20" id="u1q-B8-R7f"/>
                             <constraint firstItem="QnW-Jd-dO6" firstAttribute="top" secondItem="8pD-Lk-1At" secondAttribute="bottom" constant="40" id="xlG-Gt-SYg"/>
                         </constraints>
@@ -299,11 +306,12 @@
                         <outlet property="bestScore" destination="Qph-pB-9EE" id="TSH-dG-PYX"/>
                         <outlet property="currentScore" destination="eU6-7q-Z6r" id="mqm-Gf-8T4"/>
                         <outlet property="nameField" destination="QnW-Jd-dO6" id="CLy-qb-WGm"/>
+                        <outlet property="snakeScene2" destination="OyV-i3-giq" id="zZj-ge-0tr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xoa-yA-cTI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1050.7246376811595" y="812.27678571428567"/>
+            <point key="canvasLocation" x="1049.2753623188407" y="811.60714285714278"/>
         </scene>
     </scenes>
     <resources>
