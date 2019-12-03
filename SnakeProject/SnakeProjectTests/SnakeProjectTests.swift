@@ -38,8 +38,10 @@ class SnakeProjectTests: XCTestCase {
         XCTAssertEqual(frames2.count, 2, "The Picture assets for Vertical weren't found, the proper pictures are missing.")
     }
 
-    
+    // MARK: - testNamefield
     func testNameField(){
-        //
+        let object = HighscoresViewController()
+        object.setName = "bob"
+        XCTAssertEqual(object.setName,"bob", "Bob wasn't found")
     }
 }
