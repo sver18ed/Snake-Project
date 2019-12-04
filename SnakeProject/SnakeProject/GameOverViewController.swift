@@ -44,4 +44,5 @@ class GameOverViewController: UIViewController {
         destination?.setName = name
         destination?.setPoints = points
     }
+    @IBAction func prepareForUnwind(segue:UIStoryboardSegue){}
 }
