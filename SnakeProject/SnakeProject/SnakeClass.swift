@@ -18,7 +18,9 @@ class SnakeClass: SKScene {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    
     // MARK: - InitImage
+    
     override init(size: CGSize) {
         super.init(size: size)
         self.backgroundColor = UIColor.white
@@ -40,6 +42,7 @@ class SnakeClass: SKScene {
     }
     
     // MARK: - moveSnakeHorizontal
+    
     func moveSnakeHorizontal(){
         let texture = self.snakeFrames![0]
         let snake = SKSpriteNode(texture: texture)
@@ -72,7 +75,9 @@ class SnakeClass: SKScene {
         
         snake.run(allAction)
     }
+    
     // MARK: - moveSnakeVertical
+    
     func moveSnakeVertical(){
         let texture = self.snakeFrames2![0]
         let snake = SKSpriteNode(texture: texture)

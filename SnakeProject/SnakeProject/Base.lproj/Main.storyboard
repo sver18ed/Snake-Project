@@ -190,9 +190,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OyV-i3-giq">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                            </skView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Over!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eP-w3-9dy">
                                 <rect key="frame" x="20" y="104" width="374" height="80"/>
                                 <constraints>
@@ -276,18 +273,15 @@
                         <constraints>
                             <constraint firstItem="hcQ-2f-bQP" firstAttribute="centerY" secondItem="ead-8T-g3h" secondAttribute="centerY" id="0GI-gH-LOT"/>
                             <constraint firstItem="8pD-Lk-1At" firstAttribute="top" secondItem="hcQ-2f-bQP" secondAttribute="bottom" constant="50" id="3eI-7k-LYR"/>
-                            <constraint firstItem="OyV-i3-giq" firstAttribute="top" secondItem="ead-8T-g3h" secondAttribute="top" id="9V5-nE-wOa"/>
                             <constraint firstItem="0eP-w3-9dy" firstAttribute="leading" secondItem="7hw-zE-YSk" secondAttribute="leading" constant="20" id="9rm-NN-ngI"/>
                             <constraint firstItem="Qph-pB-9EE" firstAttribute="leading" secondItem="7hw-zE-YSk" secondAttribute="leading" constant="20" id="AGz-W9-cEG"/>
                             <constraint firstItem="eU6-7q-Z6r" firstAttribute="top" secondItem="Qph-pB-9EE" secondAttribute="bottom" constant="10" id="EBp-Ge-Cy5"/>
                             <constraint firstItem="8pD-Lk-1At" firstAttribute="leading" secondItem="7hw-zE-YSk" secondAttribute="leading" constant="100" id="HFf-ww-Zk0"/>
                             <constraint firstItem="HPp-J9-X5t" firstAttribute="leading" secondItem="7hw-zE-YSk" secondAttribute="leading" constant="120" id="IC3-Tz-hja"/>
                             <constraint firstItem="QnW-Jd-dO6" firstAttribute="leading" secondItem="7hw-zE-YSk" secondAttribute="leading" constant="100" id="J4D-KM-fzi"/>
-                            <constraint firstAttribute="bottom" secondItem="OyV-i3-giq" secondAttribute="bottom" id="Min-Bv-Q8C"/>
                             <constraint firstItem="7hw-zE-YSk" firstAttribute="trailing" secondItem="QnW-Jd-dO6" secondAttribute="trailing" constant="100" id="VrU-Xg-fEs"/>
                             <constraint firstItem="7hw-zE-YSk" firstAttribute="trailing" secondItem="eU6-7q-Z6r" secondAttribute="trailing" constant="20" id="Xfd-CA-p9r"/>
                             <constraint firstItem="7hw-zE-YSk" firstAttribute="trailing" secondItem="Qph-pB-9EE" secondAttribute="trailing" constant="20" id="ZsS-Wc-nGq"/>
-                            <constraint firstAttribute="trailing" secondItem="OyV-i3-giq" secondAttribute="trailing" id="b38-Bi-wg5"/>
                             <constraint firstItem="Qph-pB-9EE" firstAttribute="top" secondItem="0eP-w3-9dy" secondAttribute="bottom" constant="25" id="cc0-TR-Lbv"/>
                             <constraint firstItem="HPp-J9-X5t" firstAttribute="top" secondItem="QnW-Jd-dO6" secondAttribute="bottom" constant="10" id="cug-XT-Qaq"/>
                             <constraint firstItem="eU6-7q-Z6r" firstAttribute="leading" secondItem="7hw-zE-YSk" secondAttribute="leading" constant="20" id="d5b-3E-OHD"/>
@@ -295,7 +289,6 @@
                             <constraint firstItem="hcQ-2f-bQP" firstAttribute="centerX" secondItem="ead-8T-g3h" secondAttribute="centerX" id="dt8-mD-ywI"/>
                             <constraint firstItem="7hw-zE-YSk" firstAttribute="trailing" secondItem="HPp-J9-X5t" secondAttribute="trailing" constant="120" id="mOz-TD-bEP"/>
                             <constraint firstItem="hcQ-2f-bQP" firstAttribute="top" secondItem="eU6-7q-Z6r" secondAttribute="bottom" constant="30" id="n6F-5h-9Lf"/>
-                            <constraint firstItem="OyV-i3-giq" firstAttribute="leading" secondItem="ead-8T-g3h" secondAttribute="leading" id="ot8-JW-Oqx"/>
                             <constraint firstItem="7hw-zE-YSk" firstAttribute="trailing" secondItem="0eP-w3-9dy" secondAttribute="trailing" constant="20" id="u1q-B8-R7f"/>
                             <constraint firstItem="QnW-Jd-dO6" firstAttribute="top" secondItem="8pD-Lk-1At" secondAttribute="bottom" constant="40" id="xlG-Gt-SYg"/>
                         </constraints>
@@ -306,7 +299,6 @@
                         <outlet property="bestScore" destination="Qph-pB-9EE" id="TSH-dG-PYX"/>
                         <outlet property="currentScore" destination="eU6-7q-Z6r" id="mqm-Gf-8T4"/>
                         <outlet property="nameField" destination="QnW-Jd-dO6" id="CLy-qb-WGm"/>
-                        <outlet property="snakeScene2" destination="OyV-i3-giq" id="zZj-ge-0tr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xoa-yA-cTI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -319,7 +311,7 @@
         <image name="rectangle.fill" catalog="system" width="64" height="46"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pPZ-zF-Ek7"/>
-        <segue reference="m1z-lO-dhE"/>
+        <segue reference="Xzk-Al-fK7"/>
+        <segue reference="0iF-S0-rpG"/>
     </inferredMetricsTieBreakers>
 </document>

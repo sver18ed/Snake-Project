@@ -14,7 +14,6 @@ class MainMenuViewController: UIViewController {
     @IBOutlet weak var snakeScene: SKView!
     
     var scene:SnakeClass?
-    var timer:Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,23 +21,27 @@ class MainMenuViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        timer = Timer.scheduledTimer(timeInterval: 6, target: self, selector:  #selector(MainMenuViewController.moveIt), userInfo: nil, repeats: true)
         self.scene = SnakeClass(size: CGSize(width: self.snakeScene.frame.size.width, height: self.snakeScene.frame.size.height))
         self.snakeScene.presentScene(scene)
-        moveIt()
         print("two snakes")
+    }
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake{
+            let number = Int.random(in: 0 ..< 2)
+            if number % 2 == 0{
+                self.scene?.moveSnakeHorizontal()
+            }
+            else{
+                self.scene?.moveSnakeVertical()
+            }
+        }
     }
     
     @objc func moveIt(){
         self.scene?.moveSnakeHorizontal()
         self.scene?.moveSnakeVertical()
         print("many snakes in loop")
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        timer?.invalidate()
-        print("timer deactivate")
     }
     
     @IBAction func prepareForUnwind(segue:UIStoryboardSegue){}
