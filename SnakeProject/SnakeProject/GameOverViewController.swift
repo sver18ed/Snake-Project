@@ -24,33 +24,18 @@ class GameOverViewController: UIViewController {
     var points: String?
     
     
-     override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        
-        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.doneIsClicked))
-        
-        toolbar.setItems([doneButton], animated: true)
-        nameField.inputAccessoryView = toolbar
-
+        nameField.doneButtonToKeyboard()
     }
     
-    @objc func doneIsClicked(){
-        view.endEditing(true)
-    }
-    
-     override func viewDidAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         bestScore.text = "Local Best Score: \(DataHandler.instance.bestScore)"
         currentScore.text = "Your Score: \(DataHandler.instance.currentScore)"
         points = "\(DataHandler.instance.currentScore)"
         self.scene2 = SnakeClass(size: CGSize(width: self.snakeScene2.frame.size.width, height: self.snakeScene2.frame.size.height))
         self.snakeScene2.presentScene(scene2)
-    }
-    
-    override func becomeFirstResponder() -> Bool {
-        return true
     }
     
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
@@ -79,6 +64,35 @@ class GameOverViewController: UIViewController {
         
     }
     
+}
+
+extension UITextField{
+    @IBInspectable var doneAccessory: Bool{
+        get{
+            return self.doneAccessory
+        }
+        set (hasDone){
+            if hasDone{
+                doneButtonToKeyboard()
+            }
+        }
+    }
+    
+    func doneButtonToKeyboard(){
+        let toolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+        let doneButton:UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneButtonResponder))
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        toolbar.barStyle = .default
+        toolbar.setItems([doneButton, flexSpace], animated: false)
+        toolbar.sizeToFit()
+        
+        self.inputAccessoryView = toolbar
+    }
+    
+    @objc func doneButtonResponder(){
+        self.resignFirstResponder()
+    }
 }
 
 
