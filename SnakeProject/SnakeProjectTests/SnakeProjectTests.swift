@@ -44,4 +44,11 @@ class SnakeProjectTests: XCTestCase {
         object.setName = "bob"
         XCTAssertEqual(object.setName,"bob", "Bob wasn't found")
     }
+    
+    // MARK: - testContains
+    func testContains(){
+        let gameScene = GameScene()
+        let gameManager = GameManager(scene: gameScene)
+        XCTAssertTrue(gameManager.contains(a: [(1, 1)], v: (1, 1)))
+    }
 }
