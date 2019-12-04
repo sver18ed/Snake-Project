@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HighScores: Codable{
+class HighScoreDict: Codable{
     let highScore: [HighScoreData]
     
     init(highScore:[HighScoreData]){

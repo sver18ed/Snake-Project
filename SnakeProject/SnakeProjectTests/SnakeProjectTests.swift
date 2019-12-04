@@ -41,8 +41,8 @@ class SnakeProjectTests: XCTestCase {
     // MARK: - testNamefield
     func testNameField(){
         let object = HighscoresViewController()
-        object.setName = "bob"
-        XCTAssertEqual(object.setName,"bob", "Bob wasn't found")
+        object.name = "bob"
+        XCTAssertEqual(object.name,"bob", "Bob wasn't found")
     }
     
     // MARK: - testContains

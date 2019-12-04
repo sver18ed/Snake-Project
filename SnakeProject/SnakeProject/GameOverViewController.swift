@@ -41,8 +41,8 @@ class GameOverViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as? HighscoresViewController
-        destination?.setName = name
-        destination?.setPoints = points
+        destination?.name = name
+        destination?.points = points
     }
     @IBAction func prepareForUnwind(segue:UIStoryboardSegue){}
 }
