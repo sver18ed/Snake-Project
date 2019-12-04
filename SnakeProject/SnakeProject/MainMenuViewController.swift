@@ -41,10 +41,5 @@ class MainMenuViewController: UIViewController {
         print("timer deactivate")
     }
     
-    @IBAction func playbuttonClicked(_ sender: Any) {}
-    
-    @IBAction func highscoresbuttonClicked(_ sender: Any) {}
-    
     @IBAction func prepareForUnwind(segue:UIStoryboardSegue){}
-    
 }

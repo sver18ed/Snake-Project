@@ -19,8 +19,8 @@ class DataHandler {
             UserDefaults.standard.set(currentScore, forKey: "bestScore")
             bestScore = currentScore
         }
-       
     }
+    
     func resetCurrentScore() {
         currentScore = 0
     }

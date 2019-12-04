@@ -24,5 +24,4 @@ class HighScoreData: Codable {
         self.name = name
         self.points = points
     }
-
 }

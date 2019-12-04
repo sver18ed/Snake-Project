@@ -154,6 +154,4 @@ class GameScene: SKScene {
         button.path = path
         return button
     }
-    
-    
 }

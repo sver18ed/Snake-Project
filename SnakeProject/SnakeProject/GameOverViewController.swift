@@ -61,10 +61,10 @@ class GameOverViewController: UIViewController {
         let destination = segue.destination as? HighscoresViewController
         destination?.setName = name
         destination?.setPoints = points
-        
     }
-    
 }
+
+// MARK: - UITextField extension
 
 extension UITextField{
     @IBInspectable var doneAccessory: Bool{

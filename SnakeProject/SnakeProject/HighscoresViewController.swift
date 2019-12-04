@@ -89,7 +89,6 @@ class HighscoresViewController: UITableViewController {
         session.dataTask(with: request) { (data, response, error) in
         }.resume()
     }
-      
 }
    
 

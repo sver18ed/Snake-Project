@@ -13,10 +13,7 @@ class GameManager {
     
     var nextTime: Double?
     var timeExtension: Double = 0.15
-    
     var playerDirection: Int = 1
-    
-    
     
     init(scene: GameScene) {
         self.scene = scene
@@ -45,7 +42,6 @@ class GameManager {
                 scene.currentScore.text = "Score: \(DataHandler.instance.currentScore)"
                 generateNewPoint()
                 scene.playerPositions.append(scene.playerPositions.last!)
-                
             }
         }
     }
@@ -59,9 +55,7 @@ class GameManager {
             randomX = CGFloat(arc4random_uniform(19))
             randomY = CGFloat(arc4random_uniform(29))
         }
-        
         scene.scorePos = CGPoint(x: randomX, y: randomY)
-        
     }
     
     // MARK: - update
@@ -102,12 +96,8 @@ class GameManager {
                 self.scene.isHidden = true
                 DataHandler.instance.setBestScore()
                 goToGameOver()
-                
             }
-            
         }
-        
-
     }
     
     // MARK: - checkForDeath
@@ -235,7 +225,11 @@ class GameManager {
     
     func contains(a:[(Int, Int)], v:(Int, Int)) -> Bool {
         let (c1, c2) = v
-        for (v1, v2) in a { if v1 == c1 && v2 == c2 { return true } }
+        for (v1, v2) in a {
+            if v1 == c1 && v2 == c2 {
+                return true
+            }
+        }
         return false
     }
     
@@ -244,14 +238,4 @@ class GameManager {
     func goToGameOver() {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "gameOverSegue"), object: nil)
     }
-    
-   /* private func updateScore() {
-         if currentScore > UserDefaults.standard.integer(forKey: "bestScore") {
-              UserDefaults.standard.set(currentScore, forKey: "bestScore")
-         }
-         currentScore = 0
-         scene.currentScore.text = "Score: 0"
-         scene.bestScore.text = "Best Score: \(UserDefaults.standard.integer(forKey: "bestScore"))"
-    }*/
-    
 }
