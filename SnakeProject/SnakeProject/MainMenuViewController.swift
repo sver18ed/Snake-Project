@@ -23,25 +23,18 @@ class MainMenuViewController: UIViewController {
         super.viewDidAppear(animated)
         self.scene = SnakeClass(size: CGSize(width: self.snakeScene.frame.size.width, height: self.snakeScene.frame.size.height))
         self.snakeScene.presentScene(scene)
-        print("two snakes")
     }
     
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake{
-            let number = Int.random(in: 0 ..< 2)
-            if number % 2 == 0{
+            let number = arc4random() % 2 == 0
+            if number {
                 self.scene?.moveSnakeHorizontal()
             }
             else{
                 self.scene?.moveSnakeVertical()
             }
         }
-    }
-    
-    @objc func moveIt(){
-        self.scene?.moveSnakeHorizontal()
-        self.scene?.moveSnakeVertical()
-        print("many snakes in loop")
     }
     
     @IBAction func prepareForUnwind(segue:UIStoryboardSegue){}
