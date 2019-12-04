@@ -42,6 +42,7 @@ class GameManager {
                 scene.currentScore.text = "Score: \(DataHandler.instance.currentScore)"
                 generateNewPoint()
                 scene.playerPositions.append(scene.playerPositions.last!)
+                scene.playerPositions.append(scene.playerPositions.last!)
             }
         }
     }
