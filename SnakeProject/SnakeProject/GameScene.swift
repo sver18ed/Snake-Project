@@ -82,16 +82,16 @@ class GameScene: SKScene {
         
         //Create left, up, right & down buttons
         
-        leftButton = getButton(name: "leftButton", zPosition: 3, position: CGPoint(x: -120, y: (frame.size.height / -3)), fillColor: SKColor.blue, topCorner: CGPoint(x: 40, y: 40), bottomCorner: CGPoint(x: 40, y: -40), middle: CGPoint(x: -40, y: 0))
+        leftButton = getButton(name: "leftButton", position: CGPoint(x: -100, y: (frame.size.height / -3)), corner1: CGPoint(x: 40, y: 40), corner2: CGPoint(x: 40, y: -40), corner3: CGPoint(x: -40, y: 0))
         self.addChild(leftButton)
         
-        upButton = getButton(name: "upButton", zPosition: 3, position: CGPoint(x: 0, y: (frame.size.height / -3) + 120), fillColor: SKColor.blue, topCorner: CGPoint(x: 0, y: 40), bottomCorner: CGPoint(x: 40, y: -40), middle: CGPoint(x: -40, y: -40))
+        upButton = getButton(name: "upButton", position: CGPoint(x: 0, y: (frame.size.height / -3) + 100), corner1: CGPoint(x: 0, y: 40), corner2: CGPoint(x: 40, y: -40), corner3: CGPoint(x: -40, y: -40))
         self.addChild(upButton)
         
-        rightButton = getButton(name: "rightButton", zPosition: 3, position: CGPoint(x: 120, y: (frame.size.height / -3)), fillColor: SKColor.blue, topCorner: CGPoint(x: -40, y: 40), bottomCorner: CGPoint(x: -40, y: -40), middle: CGPoint(x: 40, y: 0))
+        rightButton = getButton(name: "rightButton", position: CGPoint(x: 100, y: (frame.size.height / -3)), corner1: CGPoint(x: -40, y: 40), corner2: CGPoint(x: -40, y: -40), corner3: CGPoint(x: 40, y: 0))
         self.addChild(rightButton)
         
-        downButton = getButton(name: "downButton", zPosition: 3, position: CGPoint(x: 0, y: (frame.size.height / -3) - 120), fillColor: SKColor.blue, topCorner: CGPoint(x: 0, y: -40), bottomCorner: CGPoint(x: 40, y: 40), middle: CGPoint(x: -40, y: 40))
+        downButton = getButton(name: "downButton", position: CGPoint(x: 0, y: (frame.size.height / -3) - 100), corner1: CGPoint(x: 0, y: -40), corner2: CGPoint(x: 40, y: 40), corner3: CGPoint(x: -40, y: 40))
         self.addChild(downButton)
         
         currentScore = SKLabelNode(fontNamed: "ArialRoundedMTBold")
@@ -142,20 +142,16 @@ class GameScene: SKScene {
     
     // MARK: - getButton
     
-    private func getButton(name: String, zPosition: CGFloat, position: CGPoint, fillColor: SKColor, topCorner: CGPoint, bottomCorner: CGPoint, middle: CGPoint) -> SKShapeNode {
+    private func getButton(name: String, position: CGPoint, corner1: CGPoint, corner2: CGPoint, corner3: CGPoint) -> SKShapeNode {
         
         let button = SKShapeNode()
         button.name = name
-        button.zPosition = zPosition
+        button.zPosition = 3
         button.position = position
-        button.fillColor = fillColor
-        let topCorner = topCorner
-        let bottomCorner = bottomCorner
-        let middle = middle
+        button.fillColor = SKColor.systemOrange
         let path = CGMutablePath()
-        path.addLines(between: [topCorner, bottomCorner, middle])
+        path.addLines(between: [corner1, corner2, corner3])
         button.path = path
-        
         return button
     }
     
