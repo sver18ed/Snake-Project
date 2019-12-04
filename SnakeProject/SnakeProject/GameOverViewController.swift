@@ -23,13 +23,12 @@ class GameOverViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameField.doneButtonToKeyboard()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        bestScore.text = "Local Best Score: \(DataHandler.instance.bestScore)"
-        currentScore.text = "Your Score: \(DataHandler.instance.currentScore)"
+        bestScore.text = "Local Best: \(DataHandler.instance.bestScore)"
+        currentScore.text = "Score: \(DataHandler.instance.currentScore)"
         points = "\(DataHandler.instance.currentScore)"
     }
     
@@ -46,37 +45,3 @@ class GameOverViewController: UIViewController {
         destination?.setPoints = points
     }
 }
-
-// MARK: - UITextField extension
-
-extension UITextField{
-    @IBInspectable var doneAccessory: Bool{
-        get{
-            return self.doneAccessory
-        }
-        set (hasDone){
-            if hasDone{
-                doneButtonToKeyboard()
-            }
-        }
-    }
-    
-    func doneButtonToKeyboard(){
-        let toolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
-        let doneButton:UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneButtonResponder))
-        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        
-        toolbar.barStyle = .default
-        toolbar.setItems([doneButton, flexSpace], animated: false)
-        toolbar.sizeToFit()
-        
-        self.inputAccessoryView = toolbar
-    }
-    
-    @objc func doneButtonResponder(){
-        self.resignFirstResponder()
-    }
-}
-
-
-
