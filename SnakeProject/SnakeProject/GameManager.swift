@@ -11,9 +11,11 @@ import SpriteKit
 class GameManager {
     var scene: GameScene!
     
-    var nextTime: Double?
+    var previousTimeStamp: Double?
     var timeExtension: Double = 0.15
-    var playerDirection: Int = 1
+    var playerDirection: Int = 2
+    var appleValue: Int = 1
+    var snakeLengthIncrease: Int = 2
     
     init(scene: GameScene) {
         self.scene = scene
@@ -22,11 +24,10 @@ class GameManager {
     // MARK: - initGame
     
     func initGame() {
-        //starting player position
-        scene.playerPositions.append((10, 10))
-        scene.playerPositions.append((10, 11))
-        scene.playerPositions.append((10, 12))
-        
+        //printing the snake 3 cells long in the middle of the screen
+        for n in 15...17 {
+            scene.playerPositions.append((n, 10))
+        }
         renderChange()
         generateNewPoint()
     }
@@ -34,15 +35,18 @@ class GameManager {
     // MARK: - checkForScore
     
     private func checkForScore() {
-        if scene.scorePos != nil {
+        if scene.applePosition != nil {
             let x = scene.playerPositions[0].0
             let y = scene.playerPositions[0].1
-            if Int((scene.scorePos?.x)!) == y && Int((scene.scorePos?.y)!) == x {
-                DataHandler.instance.currentScore += 10
-                scene.currentScore.text = "Score: \(DataHandler.instance.currentScore)"
+            if Int((scene.applePosition?.x)!) == y && Int((scene.applePosition?.y)!) == x {
+                DataHandler.instance.currentScore += appleValue
+                scene.currentScoreLabel.text = "Score: \(DataHandler.instance.currentScore)"
                 generateNewPoint()
-                scene.playerPositions.append(scene.playerPositions.last!)
-                scene.playerPositions.append(scene.playerPositions.last!)
+                
+                // Increases the length of the snake
+                for _ in 1...snakeLengthIncrease {
+                    scene.playerPositions.append(scene.playerPositions.last!)
+                }
             }
         }
     }
@@ -50,23 +54,23 @@ class GameManager {
     // MARK: - generateNewPoint
     
     private func generateNewPoint() {
-        var randomX = CGFloat(arc4random_uniform(19))
-        var randomY = CGFloat(arc4random_uniform(29))
+        var randomX = CGFloat(arc4random_uniform(UInt32(scene.getNumberOfColumns() - 1)))
+        var randomY = CGFloat(arc4random_uniform(UInt32(scene.getNumberOfRows() - 1)))
         while contains(a: scene.playerPositions, v: (Int(randomX), Int(randomY))) {
-            randomX = CGFloat(arc4random_uniform(19))
-            randomY = CGFloat(arc4random_uniform(29))
+            randomX = CGFloat(arc4random_uniform(UInt32(scene.getNumberOfColumns() - 1)))
+            randomY = CGFloat(arc4random_uniform(UInt32(scene.getNumberOfRows() - 1)))
         }
-        scene.scorePos = CGPoint(x: randomX, y: randomY)
+        scene.applePosition = CGPoint(x: randomX, y: randomY)
     }
     
     // MARK: - update
     
-    func update(time: Double) {
-        if nextTime == nil {
-            nextTime = time + timeExtension
+    func update(currentTime: Double) {
+        if previousTimeStamp == nil {
+            previousTimeStamp = currentTime + timeExtension
         } else {
-            if time >= nextTime! {
-                nextTime = time + timeExtension
+            if currentTime >= previousTimeStamp! {
+                previousTimeStamp = currentTime + timeExtension
                 
                 updatePlayerPosition()
                 checkForScore()
@@ -88,10 +92,6 @@ class GameManager {
                 }
             }
             if hasFinished{
-                
-               //goToGameOver()
-                print("end game")
-                //updateScore()
                 playerDirection = 4
                 renderChange()
                 self.scene.isHidden = true
@@ -118,7 +118,7 @@ class GameManager {
 
     private func updatePlayerPosition() {
         
-        var xChange = -1
+        var xChange = 0
         var yChange = 0
         
         switch playerDirection {
@@ -163,14 +163,14 @@ class GameManager {
         if scene.playerPositions.count > 0 {
             let x = scene.playerPositions[0].1
             let y = scene.playerPositions[0].0
-            if y > 30 - 1 {
+            if y > scene.getNumberOfRows() - 1 {
                 scene.playerPositions[0].0 = 0
             } else if y < 0 {
-                scene.playerPositions[0].0 = 30 - 1
-            } else if x > 20 - 1 {
+                scene.playerPositions[0].0 = scene.getNumberOfRows() - 1
+            } else if x > scene.getNumberOfColumns() - 1 {
                scene.playerPositions[0].1 = 0
             } else if x < 0 {
-                scene.playerPositions[0].1 = 20 - 1
+                scene.playerPositions[0].1 = scene.getNumberOfColumns() - 1
             }
         }
         renderChange()
@@ -213,8 +213,8 @@ class GameManager {
                 node.fillColor = SKColor.green
             } else {
                 node.fillColor = SKColor.clear
-                if scene.scorePos != nil {
-                    if Int((scene.scorePos?.x)!) == y && Int((scene.scorePos?.y)!) == x {
+                if scene.applePosition != nil {
+                    if Int((scene.applePosition?.x)!) == y && Int((scene.applePosition?.y)!) == x {
                         node.fillColor = SKColor.red
                     }
                 }
@@ -225,9 +225,9 @@ class GameManager {
     // MARK: - contains
     
     func contains(a:[(Int, Int)], v:(Int, Int)) -> Bool {
-        let (c1, c2) = v
-        for (v1, v2) in a {
-            if v1 == c1 && v2 == c2 {
+        let (v1, v2) = v
+        for (a1, a2) in a {
+            if a1 == v1 && a2 == v2 {
                 return true
             }
         }

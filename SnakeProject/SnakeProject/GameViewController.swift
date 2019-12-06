@@ -20,7 +20,7 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         NotificationCenter.default.addObserver(self, selector: #selector(goToGameOver), name: NSNotification.Name(rawValue: "gameOverSegue"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(goToGameOver), name: NSNotification.Name(rawValue: "gameOverSegue"), object: nil)
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
@@ -41,18 +41,6 @@ class GameViewController: UIViewController {
         return false
     }
     
-    // MARK: - supportedInterfaceOrientations
-
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .allButUpsideDown
-        } else {
-            return .all
-        }
-    }
-    
-    // MARK: - prefersStatusBarHidden
-
     override var prefersStatusBarHidden: Bool {
         return true
     }
