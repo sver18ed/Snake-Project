@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BD9165C239AA039005D09A7 /* HighScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD9165B239AA039005D09A7 /* HighScoreManager.swift */; };
 		3BF003B2238E888C0042C406 /* HighScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF003B1238E888C0042C406 /* HighScoreCell.swift */; };
 		3BF003B6238E89130042C406 /* HighScoreJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF003B5238E89130042C406 /* HighScoreJson.swift */; };
 		923331822391258200596B84 /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923331812391258200596B84 /* DataHandler.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3BD9165B239AA039005D09A7 /* HighScoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreManager.swift; sourceTree = "<group>"; };
 		3BF003B1238E888C0042C406 /* HighScoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreCell.swift; sourceTree = "<group>"; };
 		3BF003B5238E89130042C406 /* HighScoreJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreJson.swift; sourceTree = "<group>"; };
 		923331812391258200596B84 /* DataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				BA528DB7237EB7D800B57435 /* MainMenuViewController.swift */,
 				BA528DB9237EB7F100B57435 /* GameOverViewController.swift */,
 				BA528DBB237EB80300B57435 /* HighscoresViewController.swift */,
+				3BD9165B239AA039005D09A7 /* HighScoreManager.swift */,
 				BA528DBD237EBE7C00B57435 /* GameManager.swift */,
 				923331812391258200596B84 /* DataHandler.swift */,
 			);
@@ -295,6 +298,7 @@
 				BA528DBE237EBE7C00B57435 /* GameManager.swift in Sources */,
 				BA528D84237E8D0E00B57435 /* AppDelegate.swift in Sources */,
 				BA528DBA237EB7F100B57435 /* GameOverViewController.swift in Sources */,
+				3BD9165C239AA039005D09A7 /* HighScoreManager.swift in Sources */,
 				BA528DBC237EB80300B57435 /* HighscoresViewController.swift in Sources */,
 				3BF003B6238E89130042C406 /* HighScoreJson.swift in Sources */,
 				9EE95F0D238FBB5300B3CB96 /* SnakeAnimation.swift in Sources */,

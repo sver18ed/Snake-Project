@@ -14,6 +14,8 @@ class DataHandler {
     var currentScore: Int = 0
     var bestScore: Int = UserDefaults.standard.integer(forKey: "bestScore")
     
+    var highScoreData: [HighScoreData] = UserDefaults.standard.array(forKey: "HighScoreKey") as? [HighScoreData] ?? []
+    
     func setBestScore() {
         if currentScore > bestScore {
             UserDefaults.standard.set(currentScore, forKey: "bestScore")
@@ -24,4 +26,10 @@ class DataHandler {
     func resetCurrentScore() {
         currentScore = 0
     }
+    
+    func highScoreData(highScoreData: [HighScoreData]){
+        self.highScoreData = highScoreData
+    }
+    
+    
 }

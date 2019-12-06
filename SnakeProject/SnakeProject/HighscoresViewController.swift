@@ -20,10 +20,21 @@ class HighscoresViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        downloadJson()
-        updateHighScoreData()
+        fetchJson()
     }
     
+    func fetchJson(){
+           HighScoreManager.fetchHighScore { (results:[HighScoreData]) in
+              self.highScoreData = results
+              DispatchQueue.main.async {
+                  self.theTableView.reloadData()
+              }
+           }
+       }
+    
+    
+    
+    /*
     // MARK: - downloadJson
     
     func downloadJson(){
@@ -76,7 +87,7 @@ class HighscoresViewController: UITableViewController {
         session.dataTask(with: request) { (data, response, error) in
         }.resume()
     }
-    
+    */
     // MARK: - writing out the information in tableView
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
