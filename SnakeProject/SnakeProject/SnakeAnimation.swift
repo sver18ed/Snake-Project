@@ -48,21 +48,21 @@ class SnakeAnimation: SKScene {
         let snake = SKSpriteNode(texture: texture)
         snake.size = CGSize(width: 400, height: 400)
         
-        let randomSnakeYPosition = GKRandomDistribution(lowestValue: 50, highestValue: (Int(self.frame.size.width)))
-        let yPosition = CGFloat(randomSnakeYPosition.nextInt())
-        let rightToLeft = arc4random() % 2 == 0
-        let xPosition = rightToLeft ? self.frame.size
-            .width + snake.size.width / 2 : -snake.size.width / 2
+        let generateRandomSnakeYPosition = GKRandomDistribution(lowestValue: 50, highestValue: (Int(self.frame.size.height)-50))
+        let yPosition = CGFloat(generateRandomSnakeYPosition.nextInt())
+        let fromRightToLeft = arc4random() % 2 == 0
+        let xPosition = fromRightToLeft ? self.frame.size
+            .width + snake.size.width / 2 : -snake.size.width / 2 //select starting position depending on orientation
         snake.position = CGPoint(x: xPosition, y: yPosition)
-        if rightToLeft{
-            snake.xScale = -1
+        if fromRightToLeft{
+            snake.xScale = -1 //reverse direction of image
         }
         
         self.addChild(snake)
         snake.run(SKAction.repeatForever(SKAction.animate(with: self.snakeFrames!, timePerFrame: 0.65, resize: false, restore: true)))
         var rangeToCover = self.frame.size.width + snake.size.width
-        if rightToLeft{
-            rangeToCover *= -1
+        if fromRightToLeft{
+            rangeToCover *= -1 //reversing direction
         }
         
         let time = TimeInterval(abs(rangeToCover/100))
@@ -83,21 +83,21 @@ class SnakeAnimation: SKScene {
         let snake = SKSpriteNode(texture: texture)
         snake.size = CGSize(width: 400, height: 400)
         
-        let randomSnakeXPosition = GKRandomDistribution(lowestValue: 50, highestValue: (Int(self.frame.size.width)))
-        let xPosition = CGFloat(randomSnakeXPosition.nextInt())
-        let rightToLeft = arc4random() % 2 == 0
-        let yPosition = rightToLeft ? self.frame.size
-            .height + snake.size.height / 2 : -snake.size.height / 2
+        let generateRandomSnakeXPosition = GKRandomDistribution(lowestValue: 50, highestValue: (Int(self.frame.size.width)-50))
+        let xPosition = CGFloat(generateRandomSnakeXPosition.nextInt())
+        let fromRightToLeft = arc4random() % 2 == 0
+        let yPosition = fromRightToLeft ? self.frame.size
+            .height + snake.size.height / 2 : -snake.size.height / 2 //select starting position depending on orientation
         snake.position = CGPoint(x: xPosition, y: yPosition)
-        if rightToLeft{
-            snake.yScale = -1
+        if fromRightToLeft{
+            snake.yScale = -1 //reverse direction of image
         }
         
         self.addChild(snake)
         snake.run(SKAction.repeatForever(SKAction.animate(with: self.snakeFrames2!, timePerFrame: 0.65, resize: false, restore: true)))
         var rangeToCover = self.frame.size.height + snake.size.height
-        if rightToLeft{
-            rangeToCover *= -1
+        if fromRightToLeft{
+            rangeToCover *= -1 //reversing direction
         }
         
         let time = TimeInterval(abs(rangeToCover/100))
