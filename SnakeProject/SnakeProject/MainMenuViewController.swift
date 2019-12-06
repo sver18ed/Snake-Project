@@ -13,7 +13,7 @@ class MainMenuViewController: UIViewController {
     
     @IBOutlet weak var snakeScene: SKView!
     
-    var scene:SnakeClass?
+    var scene:SnakeAnimation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,7 @@ class MainMenuViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.scene = SnakeClass(size: CGSize(width: self.snakeScene.frame.size.width, height: self.snakeScene.frame.size.height))
+        self.scene = SnakeAnimation(size: CGSize(width: self.snakeScene.frame.size.width, height: self.snakeScene.frame.size.height))
         self.snakeScene.presentScene(scene)
     }
     

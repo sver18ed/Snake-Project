@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class SnakeClass: SKScene {
+class SnakeAnimation: SKScene {
     
     var snakeFrames :[SKTexture]?
     var snakeFrames2 :[SKTexture]?
