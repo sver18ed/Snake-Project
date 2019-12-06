@@ -153,9 +153,13 @@ class GameScene: SKScene {
         return button
     }
     
+    // MARK: - getNumberOfColumns
+    
     public func getNumberOfColumns() -> Int {
         return numberOfColumns
     }
+    
+    // MARK: - getNumberOfRows
     
     public func getNumberOfRows() -> Int {
         return numberOfRows
