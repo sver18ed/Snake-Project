@@ -8,19 +8,22 @@
 
 import UIKit
 
-let theApi = "https://api.myjson.com/bins/q4e78"
+let theApi = "https://api.myjson.com/bins/14ki1k"
 
 class HighscoresViewController: UITableViewController {
     final let url = URL(string: theApi)
     var highScoreData = [HighScoreData]()
     var name: String?
     var points: String?
+    var highScoreManager: HighScoreManager?
+    
     
     @IBOutlet var theTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchJson()
+        highScoreManager?.updateHighScoreData()
     }
     
     func fetchJson(){
@@ -91,11 +94,11 @@ class HighscoresViewController: UITableViewController {
     // MARK: - writing out the information in tableView
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if highScoreData.count > 10{
+        if DataHandler.instance.highScoreData.count > 10{
             return 10
         }
         else {
-            return highScoreData.count
+            return DataHandler.instance.highScoreData.count
         }
      }
     
@@ -103,8 +106,8 @@ class HighscoresViewController: UITableViewController {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? HighScoreCell {
             
             cell.rankLabel.text = String(indexPath.row+1)+"."
-            cell.nameLabel.text = highScoreData[indexPath.row].name
-            cell.pointsLabel.text = String(highScoreData[indexPath.row].points)+"p"
+            cell.nameLabel.text = DataHandler.instance.highScoreData[indexPath.row].name
+            cell.pointsLabel.text = String(DataHandler.instance.highScoreData[indexPath.row].points)+"p"
             
             return cell
         }

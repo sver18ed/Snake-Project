@@ -29,14 +29,10 @@ class GameOverViewController: UIViewController {
     
     @IBAction func setNameButton(_ sender: Any) {
         if nameField.text != ""{
-            performSegue(withIdentifier: "highScoreSegue", sender: self)
+            DataHandler.instance.highScoreData.append(HighScoreData.init(name: nameField.text ?? "", points: Int(DataHandler.instance.currentScore)))
+            performSegue(withIdentifier: "mainMenuSegue", sender: self)
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination as? HighscoresViewController
-        destination?.name = nameField.text
-        destination?.points = "\(DataHandler.instance.currentScore)"
-    }
     @IBAction func prepareForUnwind(segue:UIStoryboardSegue){}
 }

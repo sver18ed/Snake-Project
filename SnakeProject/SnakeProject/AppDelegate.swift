@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let defaults = UserDefaults.standard
         let defaultValue = ["bestScore": 0]
         defaults.register(defaults: defaultValue)
+        
+        
 
         return true
     }

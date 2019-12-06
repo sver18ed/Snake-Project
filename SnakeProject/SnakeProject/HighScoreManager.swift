@@ -11,6 +11,8 @@ import Foundation
 
 class HighScoreManager{
 
+    var highScoreViewController = HighscoresViewController()
+    
     
     static func fetchHighScore(completion: @escaping ([HighScoreData])->()) {
         guard let url = URL(string: "https://api.myjson.com/bins/q4e78") else {
@@ -30,9 +32,8 @@ class HighScoreManager{
                     let decoder = JSONDecoder()
                     let downloadedHighscore = try decoder.decode(HighScoreDict.self, from: data)
                     highScoreData.append(contentsOf: downloadedHighscore.highScore)
-                    //DataHandler.instance.highScoreData.append(contentsOf: downloadedHighscore.highScore)
-
-                    
+                    highScoreData = highScoreData.sorted(by: { $0.points > $1.points })
+                    DataHandler.instance.highScoreData = highScoreData
                 } catch{
                     print("Error")
                 }
@@ -43,6 +44,16 @@ class HighScoreManager{
             }
         task.resume()
         }
+    
+
+    func updateHighScoreData(){
+        if highScoreViewController.name != nil {
+            if highScoreViewController.name != ""{
+                let newUserData = [HighScoreData.init(name: highScoreViewController.name ?? "" , points: Int(highScoreViewController.points ?? "") ?? 0)]
+                DataHandler.instance.highScoreData.append(contentsOf: newUserData)
+            }
+        }
+    }
   
  
 }

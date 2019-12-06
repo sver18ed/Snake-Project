@@ -31,5 +31,19 @@ class DataHandler {
         self.highScoreData = highScoreData
     }
     
+    func sendNewHighScoreDict(){
+        guard let url = URL(string: "https://api.myjson.com/bins/q4e78") else { return }
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        guard let httpBody = try? JSONEncoder().encode(HighScoreDict.init(highScore: DataHandler.instance.highScoreData)) else {return}
+        
+        request.httpBody = httpBody
+
+        let session = URLSession.shared
+        session.dataTask(with: request) { (data, response, error) in
+        }.resume()
+    }
+    
     
 }

@@ -14,7 +14,7 @@ class GameManager {
     var previousTimeStamp: Double?
     var timeExtension: Double = 0.15
     var playerDirection: Int = 2
-    var appleValue: Int = 1
+    var appleValue: Int = 10
     var snakeLengthIncrease: Int = 2
     
     init(scene: GameScene) {

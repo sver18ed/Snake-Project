@@ -17,6 +17,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
+                    <navigationItem key="navigationItem" id="jej-td-P36"/>
                     <connections>
                         <segue destination="ypo-Pp-2dO" kind="show" identifier="gameOverSegue" id="Jo3-5t-x3s"/>
                     </connections>
@@ -28,7 +29,7 @@
         <!--Main Menu View Controller-->
         <scene sceneID="EfV-yd-I37">
             <objects>
-                <viewController id="wRG-E4-vqT" customClass="MainMenuViewController" customModule="SnakeProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="wRG-E4-vqT" customClass="MainMenuViewController" customModule="SnakeProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gcy-Lp-GEI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -92,6 +93,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Xop-9T-Nd0"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Hjc-dr-48N"/>
                     <connections>
                         <outlet property="snakeScene" destination="kPN-5T-LJT" id="ejg-xi-Q4p"/>
                     </connections>
@@ -255,7 +257,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPp-J9-X5t">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPp-J9-X5t" customClass="homeSegue">
                                 <rect key="frame" x="20" y="236" width="115" height="32.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="KTr-lS-oX4"/>
@@ -309,6 +311,7 @@
                         <outlet property="bestScore" destination="eU6-7q-Z6r" id="i4o-ag-8Dt"/>
                         <outlet property="currentScore" destination="Qph-pB-9EE" id="363-Bb-K1r"/>
                         <outlet property="nameField" destination="QnW-Jd-dO6" id="CLy-qb-WGm"/>
+                        <segue destination="wRG-E4-vqT" kind="show" identifier="mainMenuSegue" id="csY-b3-Y2s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xoa-yA-cTI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -321,7 +324,7 @@
         <image name="rectangle.fill" catalog="system" width="64" height="46"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Xzk-Al-fK7"/>
-        <segue reference="0iF-S0-rpG"/>
+        <segue reference="pPZ-zF-Ek7"/>
+        <segue reference="m1z-lO-dhE"/>
     </inferredMetricsTieBreakers>
 </document>

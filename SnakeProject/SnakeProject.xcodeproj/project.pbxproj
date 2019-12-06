@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3BD9165C239AA039005D09A7 /* HighScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD9165B239AA039005D09A7 /* HighScoreManager.swift */; };
+		3BD91660239ABDEB005D09A7 /* HighScoreDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD9165F239ABDEB005D09A7 /* HighScoreDict.swift */; };
 		3BF003B2238E888C0042C406 /* HighScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF003B1238E888C0042C406 /* HighScoreCell.swift */; };
-		3BF003B6238E89130042C406 /* HighScoreJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF003B5238E89130042C406 /* HighScoreJson.swift */; };
+		3BF003B6238E89130042C406 /* HighScoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF003B5238E89130042C406 /* HighScoreData.swift */; };
 		923331822391258200596B84 /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 923331812391258200596B84 /* DataHandler.swift */; };
 		9EE95F0D238FBB5300B3CB96 /* SnakeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE95F0C238FBB5300B3CB96 /* SnakeAnimation.swift */; };
 		BA528D84237E8D0E00B57435 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA528D83237E8D0E00B57435 /* AppDelegate.swift */; };
@@ -46,8 +47,9 @@
 
 /* Begin PBXFileReference section */
 		3BD9165B239AA039005D09A7 /* HighScoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreManager.swift; sourceTree = "<group>"; };
+		3BD9165F239ABDEB005D09A7 /* HighScoreDict.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreDict.swift; sourceTree = "<group>"; };
 		3BF003B1238E888C0042C406 /* HighScoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreCell.swift; sourceTree = "<group>"; };
-		3BF003B5238E89130042C406 /* HighScoreJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreJson.swift; sourceTree = "<group>"; };
+		3BF003B5238E89130042C406 /* HighScoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreData.swift; sourceTree = "<group>"; };
 		923331812391258200596B84 /* DataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
 		9EE95F0C238FBB5300B3CB96 /* SnakeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnakeAnimation.swift; sourceTree = "<group>"; };
 		BA528D80237E8D0E00B57435 /* SnakeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnakeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,7 +126,7 @@
 				BA528D89237E8D0E00B57435 /* GameScene.swift */,
 				BA528D8B237E8D0E00B57435 /* GameViewController.swift */,
 				BA528D8D237E8D0E00B57435 /* Main.storyboard */,
-				3BF003B5238E89130042C406 /* HighScoreJson.swift */,
+				3BF003B5238E89130042C406 /* HighScoreData.swift */,
 				3BF003B1238E888C0042C406 /* HighScoreCell.swift */,
 				BA528D90237E8D1100B57435 /* Assets.xcassets */,
 				BA528D92237E8D1100B57435 /* LaunchScreen.storyboard */,
@@ -136,6 +138,7 @@
 				3BD9165B239AA039005D09A7 /* HighScoreManager.swift */,
 				BA528DBD237EBE7C00B57435 /* GameManager.swift */,
 				923331812391258200596B84 /* DataHandler.swift */,
+				3BD9165F239ABDEB005D09A7 /* HighScoreDict.swift */,
 			);
 			path = SnakeProject;
 			sourceTree = "<group>";
@@ -297,10 +300,11 @@
 				BA528D8C237E8D0E00B57435 /* GameViewController.swift in Sources */,
 				BA528DBE237EBE7C00B57435 /* GameManager.swift in Sources */,
 				BA528D84237E8D0E00B57435 /* AppDelegate.swift in Sources */,
+				3BD91660239ABDEB005D09A7 /* HighScoreDict.swift in Sources */,
 				BA528DBA237EB7F100B57435 /* GameOverViewController.swift in Sources */,
 				3BD9165C239AA039005D09A7 /* HighScoreManager.swift in Sources */,
 				BA528DBC237EB80300B57435 /* HighscoresViewController.swift in Sources */,
-				3BF003B6238E89130042C406 /* HighScoreJson.swift in Sources */,
+				3BF003B6238E89130042C406 /* HighScoreData.swift in Sources */,
 				9EE95F0D238FBB5300B3CB96 /* SnakeAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

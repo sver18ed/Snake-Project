@@ -8,14 +8,6 @@
 
 import UIKit
 
-class HighScoreDict: Codable{
-    let highScore: [HighScoreData]
-    
-    init(highScore:[HighScoreData]){
-        self.highScore = highScore
-    }
-}
-
 class HighScoreData: Codable {
     let name: String
     let points: Int
