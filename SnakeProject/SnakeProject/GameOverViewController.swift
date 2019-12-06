@@ -17,10 +17,6 @@ class GameOverViewController: UIViewController {
     
     @IBOutlet weak var nameField: UITextField!
     
-    var name: String?
-    var points: String?
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -29,20 +25,18 @@ class GameOverViewController: UIViewController {
         super.viewDidAppear(animated)
         bestScore.text = "Local Best: \(DataHandler.instance.bestScore)"
         currentScore.text = "Score: \(DataHandler.instance.currentScore)"
-        points = "\(DataHandler.instance.currentScore)"
     }
     
     @IBAction func setNameButton(_ sender: Any) {
-        name = nameField.text
-        if name != ""{
+        if nameField.text != ""{
             performSegue(withIdentifier: "highScoreSegue", sender: self)
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as? HighscoresViewController
-        destination?.name = name
-        destination?.points = points
+        destination?.name = nameField.text
+        destination?.points = "\(DataHandler.instance.currentScore)"
     }
     @IBAction func prepareForUnwind(segue:UIStoryboardSegue){}
 }

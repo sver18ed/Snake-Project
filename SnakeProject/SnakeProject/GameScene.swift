@@ -11,11 +11,10 @@ import GameplayKit
 
 class GameScene: SKScene {
     
-    var game: GameManager!
-    
+    var gameManager: GameManager!
     
     var playerPositions: [(Int, Int)] = []
-    var gameBG: SKShapeNode!
+    var gameBackGround: SKShapeNode!
     var gameArray: [(node: SKShapeNode, x: Int, y: Int)] = []
     
     var leftButton: SKShapeNode!
@@ -23,13 +22,17 @@ class GameScene: SKScene {
     var rightButton: SKShapeNode!
     var downButton: SKShapeNode!
     
-    var currentScore: SKLabelNode!
-    var scorePos: CGPoint?
+    var numberOfColumns: Int!
+    var numberOfRows: Int!
+    
+    var currentScoreLabel: SKLabelNode!
+    var applePosition: CGPoint?
     
     // MARK: - didMove
     
     override func didMove(to view: SKView) {
-        game = GameManager(scene: self)
+        gameManager = GameManager(scene: self)
+        DataHandler.instance.resetCurrentScore()
         initializeGameView()
         startGame()
     }
@@ -37,7 +40,7 @@ class GameScene: SKScene {
     // MARK: - update
     
      override func update(_ currentTime: TimeInterval) {
-        game.update(time: currentTime)
+        gameManager.update(currentTime: currentTime)
     }
     
     // MARK: - touchesBegan
@@ -48,17 +51,16 @@ class GameScene: SKScene {
             let touchedNode = self.nodes(at: location)
             for node in touchedNode {
                 if node.name == "leftButton" {
-                    game.changeDirection(direction: "left")
+                    gameManager.changeDirection(direction: "left")
                 }
                 if node.name == "upButton" {
-                    game.changeDirection(direction: "up")
+                    gameManager.changeDirection(direction: "up")
                 }
-                
                 if node.name == "rightButton" {
-                    game.changeDirection(direction: "right")
+                    gameManager.changeDirection(direction: "right")
                 }
                 if node.name == "downButton" {
-                    game.changeDirection(direction: "down")
+                    gameManager.changeDirection(direction: "down")
                 }
             }
         }
@@ -71,11 +73,10 @@ class GameScene: SKScene {
         let width = 600
         let height = 900
         let rect = CGRect(x: -width / 2, y: (-height / 2 + width / 3) - 30, width: width, height: height)
-        gameBG = SKShapeNode(rect: rect, cornerRadius: 0.02)
-        gameBG.fillColor = SKColor.systemTeal
-        gameBG.zPosition = 2
-        gameBG.isHidden = true
-        self.addChild(gameBG)
+        gameBackGround = SKShapeNode(rect: rect, cornerRadius: 0)
+        gameBackGround.fillColor = SKColor.systemTeal
+        gameBackGround.isHidden = true
+        self.addChild(gameBackGround)
         
 
         createGameBoard(width: width, height: height)
@@ -94,14 +95,12 @@ class GameScene: SKScene {
         downButton = getButton(name: "downButton", position: CGPoint(x: 0, y: (frame.size.height / -3) - 100), corner1: CGPoint(x: 0, y: -40), corner2: CGPoint(x: 40, y: 40), corner3: CGPoint(x: -40, y: 40))
         self.addChild(downButton)
         
-        currentScore = SKLabelNode(fontNamed: "ArialRoundedMTBold")
-        currentScore.zPosition = 1
-        currentScore.position = CGPoint(x: 170, y: (frame.size.height / -2) + 325)
-        currentScore.fontSize = 40
-        DataHandler.instance.resetCurrentScore()
-        currentScore.text = "Score: \(DataHandler.instance.currentScore)"
-        currentScore.fontColor = SKColor.white
-        self.addChild(currentScore)
+        currentScoreLabel = SKLabelNode(fontNamed: "ArialRoundedMTBold")
+        currentScoreLabel.position = CGPoint(x: 170, y: (frame.size.height / -2) + 325)
+        currentScoreLabel.fontSize = 40
+        currentScoreLabel.text = "Score: \(DataHandler.instance.currentScore)"
+        currentScoreLabel.fontColor = SKColor.white
+        self.addChild(currentScoreLabel)
     }
 
     // MARK: - createGameBoard
@@ -109,20 +108,20 @@ class GameScene: SKScene {
     private func createGameBoard(width: Int, height: Int) {
         
         let cellWidth: CGFloat = 30
-        let numRows = 30
-        let numCols = 20
+        numberOfRows = 30
+        numberOfColumns = 20
         var x = CGFloat(width / -2) + (cellWidth / 2)
         var y = CGFloat(height / 2 + width / 3) - 30 - (cellWidth / 2)
         //loop through rows and columns, create cells
-        for i in 0...numRows - 1 {
-            for j in 0...numCols - 1 {
+        for i in 0...numberOfRows - 1 {
+            for j in 0...numberOfColumns - 1 {
                 let cellNode = SKShapeNode(rectOf: CGSize(width: cellWidth, height: cellWidth))
                 cellNode.strokeColor = SKColor.systemTeal
                 cellNode.zPosition = 2
                 cellNode.position = CGPoint(x: x, y: y)
                 //add to array of cells -- then add to game board
                 gameArray.append((node: cellNode, x: i, y: j))
-                gameBG.addChild(cellNode)
+                gameBackGround.addChild(cellNode)
                 //iterate x
                 x += cellWidth
             }
@@ -135,9 +134,9 @@ class GameScene: SKScene {
     // MARK: - startGame
     
     private func startGame() {
-        self.gameBG.isHidden = false
-        self.gameBG.run(SKAction.scale(to: 1, duration: 0.4))
-        self.game.initGame()
+        self.gameBackGround.isHidden = false
+        self.gameBackGround.run(SKAction.scale(to: 1, duration: 0.4))
+        self.gameManager.initGame()
     }
     
     // MARK: - getButton
@@ -146,12 +145,19 @@ class GameScene: SKScene {
         
         let button = SKShapeNode()
         button.name = name
-        button.zPosition = 3
         button.position = position
         button.fillColor = SKColor.systemOrange
         let path = CGMutablePath()
         path.addLines(between: [corner1, corner2, corner3])
         button.path = path
         return button
+    }
+    
+    public func getNumberOfColumns() -> Int {
+        return numberOfColumns
+    }
+    
+    public func getNumberOfRows() -> Int {
+        return numberOfRows
     }
 }
