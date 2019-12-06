@@ -56,6 +56,7 @@ class HighscoresViewController: UITableViewController {
             if name != ""{
                 let newUserData = [HighScoreData.init(name: self.name ?? "" , points: Int(self.points ?? "") ?? 0)]
                 highScoreData.append(contentsOf: newUserData)
+                print(highScoreData)
             }
         }
     }
@@ -90,8 +91,9 @@ class HighscoresViewController: UITableViewController {
     override func tableView(_ tableView: UITableView,cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? HighScoreCell {
             
+            cell.rankLabel.text = String(indexPath.row+1)+"."
             cell.nameLabel.text = highScoreData[indexPath.row].name
-            cell.pointsLabel.text = String(highScoreData[indexPath.row].points)
+            cell.pointsLabel.text = String(highScoreData[indexPath.row].points)+"p"
             
             return cell
         }

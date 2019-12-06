@@ -38,7 +38,7 @@ class GameManager {
             let x = scene.playerPositions[0].0
             let y = scene.playerPositions[0].1
             if Int((scene.scorePos?.x)!) == y && Int((scene.scorePos?.y)!) == x {
-                DataHandler.instance.currentScore += 1
+                DataHandler.instance.currentScore += 10
                 scene.currentScore.text = "Score: \(DataHandler.instance.currentScore)"
                 generateNewPoint()
                 scene.playerPositions.append(scene.playerPositions.last!)
