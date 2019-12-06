@@ -24,7 +24,7 @@ class HighScoreManager{
         let session = URLSession(configuration: URLSessionConfiguration.default)
         let task = session.dataTask(with: url) { (responseData, response, responseError) in
             
-            var highScoreData = DataHandler.instance.highScoreData
+            var highScoreData = [HighScoreData]()
                
             if let data = responseData{
                 
@@ -44,18 +44,6 @@ class HighScoreManager{
             }
         task.resume()
         }
-    
-
-    func updateHighScoreData(){
-        if highScoreViewController.name != nil {
-            if highScoreViewController.name != ""{
-                let newUserData = [HighScoreData.init(name: highScoreViewController.name ?? "" , points: Int(highScoreViewController.points ?? "") ?? 0)]
-                DataHandler.instance.highScoreData.append(contentsOf: newUserData)
-            }
-        }
-    }
-  
- 
 }
 
 

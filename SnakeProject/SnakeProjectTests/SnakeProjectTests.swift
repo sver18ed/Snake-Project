@@ -39,11 +39,11 @@ class SnakeProjectTests: XCTestCase {
     }
 
     // MARK: - testNamefield
-    func testNameField(){
-        let object = HighscoresViewController()
-        object.name = "bob"
-        XCTAssertEqual(object.name,"bob", "Bob wasn't found")
-    }
+//    func testNameField(){
+//        let object = HighscoresViewController()
+//        object.name = "bob"
+//        XCTAssertEqual(object.name,"bob", "Bob wasn't found")
+//    }
     
     // MARK: - testContains
     func testContains(){

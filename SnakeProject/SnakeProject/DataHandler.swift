@@ -44,6 +44,4 @@ class DataHandler {
         session.dataTask(with: request) { (data, response, error) in
         }.resume()
     }
-    
-    
 }

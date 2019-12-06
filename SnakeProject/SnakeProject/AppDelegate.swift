@@ -19,8 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let defaults = UserDefaults.standard
         let defaultValue = ["bestScore": 0]
         defaults.register(defaults: defaultValue)
-        
-        
+        defaults.set([HighScoreData](), forKey: "HighScoreKey")
 
         return true
     }
