@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wRG-E4-vqT">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,7 +12,7 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="BV1-FR-VrT" customClass="GameViewController" customModule="SnakeProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
@@ -31,14 +31,14 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="wRG-E4-vqT" customClass="MainMenuViewController" customModule="SnakeProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gcy-Lp-GEI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kPN-5T-LJT">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </skView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mah-wS-wyy">
-                                <rect key="frame" x="127.5" y="275" width="120" height="116.5"/>
+                                <rect key="frame" x="147" y="390" width="120" height="116"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Mah-wS-wyy" secondAttribute="height" multiplier="1:1" id="765-to-zvw"/>
                                     <constraint firstAttribute="height" constant="120" id="r8X-yF-wJh"/>
@@ -53,7 +53,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Snake" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgG-kh-g8Q">
-                                <rect key="frame" x="55" y="127.5" width="265" height="96"/>
+                                <rect key="frame" x="55" y="242" width="304" height="96"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="96" id="5Te-69-xzv"/>
                                 </constraints>
@@ -62,7 +62,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PV2-E3-jzX">
-                                <rect key="frame" x="100" y="459.5" width="175" height="47.5"/>
+                                <rect key="frame" x="100" y="574.66666666666663" width="214" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ywI-fK-KWG"/>
                                 </constraints>
@@ -107,24 +107,24 @@
             <objects>
                 <tableViewController modalPresentationStyle="fullScreen" id="l3w-Kn-zkV" customClass="HighscoresViewController" customModule="SnakeProject" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ecj-yA-BHd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="9v5-pV-cwZ">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="453" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
                                 <navigationItem title="Highscore" id="Thb-MK-hjo">
                                     <barButtonItem key="leftBarButtonItem" id="xJB-oE-A3a">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QuD-eV-6AB">
-                                            <rect key="frame" x="16" y="4" width="92" height="36"/>
+                                            <rect key="frame" x="20" y="4" width="92" height="36"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <state key="normal" title="Back">
                                                 <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                             </state>
                                             <connections>
-                                                <segue destination="TB0-Zx-64K" kind="unwind" unwindAction="prepareForUnwindWithSegue:" id="7Dj-UY-2t6"/>
+                                                <segue destination="TB0-Zx-64K" kind="unwind" unwindAction="prepareForUnwindWithSegue:" id="v0n-Iz-oKb"/>
                                             </connections>
                                         </button>
                                     </barButtonItem>
@@ -133,26 +133,26 @@
                         </navigationBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="74" id="9Ic-Os-asn" customClass="HighScoreCell" customModule="SnakeProject" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="74"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="74"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Ic-Os-asn" id="FeI-WZ-tia">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="74"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLG-d1-lhr">
-                                            <rect key="frame" x="280" y="20" width="55" height="34"/>
+                                            <rect key="frame" x="280" y="20" width="94" height="34"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="vwF-2o-JSu">
-                                            <rect key="frame" x="108" y="31" width="39.5" height="12"/>
+                                            <rect key="frame" x="127.33333333333333" y="31" width="39.333333333333329" height="12"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qOY-78-Dbw">
-                                            <rect key="frame" x="36" y="31" width="52" height="12"/>
+                                            <rect key="frame" x="39.999999999999993" y="31" width="67.333333333333314" height="12"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -199,11 +199,11 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="ypo-Pp-2dO" customClass="GameOverViewController" customModule="SnakeProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ead-8T-g3h">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Over!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eP-w3-9dy">
-                                <rect key="frame" x="20" y="50" width="335" height="80"/>
+                                <rect key="frame" x="20" y="94" width="374" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="2tm-li-t5K"/>
                                 </constraints>
@@ -212,7 +212,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8pD-Lk-1At">
-                                <rect key="frame" x="100" y="431" width="175" height="47.5"/>
+                                <rect key="frame" x="100" y="475.66666666666669" width="214" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="qDT-o7-Mfy"/>
                                 </constraints>
@@ -226,7 +226,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcQ-2f-bQP">
-                                <rect key="frame" x="127.5" y="291.5" width="120" height="116.5"/>
+                                <rect key="frame" x="147" y="336" width="120" height="116"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hcQ-2f-bQP" secondAttribute="height" multiplier="1:1" id="3kY-Ra-vwQ"/>
                                     <constraint firstAttribute="height" constant="120" id="fXt-a4-0zg"/>
@@ -241,7 +241,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qph-pB-9EE">
-                                <rect key="frame" x="220" y="180" width="135" height="35"/>
+                                <rect key="frame" x="220" y="224" width="174" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="7fl-HI-4Bq"/>
                                 </constraints>
@@ -250,7 +250,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QnW-Jd-dO6">
-                                <rect key="frame" x="20" y="180" width="115" height="35"/>
+                                <rect key="frame" x="20" y="224" width="154" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="WVG-Wc-RIx"/>
                                 </constraints>
@@ -258,7 +258,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPp-J9-X5t" customClass="homeSegue">
-                                <rect key="frame" x="20" y="236" width="115" height="32.5"/>
+                                <rect key="frame" x="20" y="280.66666666666669" width="154" height="31.999999999999972"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="KTr-lS-oX4"/>
                                 </constraints>
@@ -272,7 +272,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Local Best:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eU6-7q-Z6r">
-                                <rect key="frame" x="220" y="235" width="135" height="35"/>
+                                <rect key="frame" x="220" y="279" width="174" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="6rY-uk-mbS"/>
                                 </constraints>
@@ -324,7 +324,7 @@
         <image name="rectangle.fill" catalog="system" width="64" height="46"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pPZ-zF-Ek7"/>
-        <segue reference="m1z-lO-dhE"/>
+        <segue reference="Xzk-Al-fK7"/>
+        <segue reference="0iF-S0-rpG"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -9,6 +9,8 @@
 import Foundation
 
 
+var flag = false
+
 class HighScoreManager{
 
     var highScoreViewController = HighscoresViewController()
@@ -32,8 +34,19 @@ class HighScoreManager{
                     let decoder = JSONDecoder()
                     let downloadedHighscore = try decoder.decode(HighScoreDict.self, from: data)
                     highScoreData.append(contentsOf: downloadedHighscore.highScore)
+                    if flag{
+                        highScoreData.append(contentsOf: DataHandler.instance.highScoreData)
+                        DataHandler.instance.highScoreData.removeAll()
+                        DataHandler.instance.highScoreData.append(contentsOf: highScoreData)
+                        DataHandler.instance.sendNewHighScoreDict()
+                        flag = false
+                    }
+                   /* if !DataHandler.instance.highScoreData.isEmpty {
+                        highScoreData.append(contentsOf: DataHandler.instance.highScoreData)
+                        DataHandler.instance.highScoreData.removeAll()
+                    }*/
+                    DataHandler.instance.highScoreData.removeAll()
                     highScoreData = highScoreData.sorted(by: { $0.points > $1.points })
-                    DataHandler.instance.highScoreData = highScoreData
                 } catch{
                     print("Error")
                 }

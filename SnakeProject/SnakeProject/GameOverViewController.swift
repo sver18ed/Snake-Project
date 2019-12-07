@@ -30,7 +30,7 @@ class GameOverViewController: UIViewController {
     @IBAction func setNameButton(_ sender: Any) {
         if nameField.text != ""{
             DataHandler.instance.highScoreData.append(HighScoreData.init(name: nameField.text ?? "", points: Int(DataHandler.instance.currentScore)))
-            DataHandler.instance.sendNewHighScoreDict()
+            flag = true
             performSegue(withIdentifier: "mainMenuSegue", sender: self)
         }
     }

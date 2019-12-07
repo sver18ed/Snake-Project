@@ -23,7 +23,7 @@ class HighscoresViewController: UITableViewController {
         fetchJson()
     }
     
-    func fetchJson(){
+    func fetchJson(){        
            HighScoreManager.fetchHighScore { (results:[HighScoreData]) in
               self.highScoreData = results
               DispatchQueue.main.async {
@@ -35,11 +35,11 @@ class HighscoresViewController: UITableViewController {
     // MARK: - writing out the information in tableView
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if DataHandler.instance.highScoreData.count > 10{
+        if highScoreData.count > 10{
             return 10
         }
         else {
-            return DataHandler.instance.highScoreData.count
+            return highScoreData.count
         }
      }
     
@@ -47,8 +47,8 @@ class HighscoresViewController: UITableViewController {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? HighScoreCell {
             
             cell.rankLabel.text = String(indexPath.row+1)+"."
-            cell.nameLabel.text = DataHandler.instance.highScoreData[indexPath.row].name
-            cell.pointsLabel.text = String(DataHandler.instance.highScoreData[indexPath.row].points)+"p"
+            cell.nameLabel.text = highScoreData[indexPath.row].name
+            cell.pointsLabel.text = String(highScoreData[indexPath.row].points)+"p"
             
             return cell
         }
