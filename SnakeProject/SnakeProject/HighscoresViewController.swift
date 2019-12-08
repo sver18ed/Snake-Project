@@ -8,14 +8,9 @@
 
 import UIKit
 
-let theApi = "https://api.myjson.com/bins/14ki1k"
-
 class HighscoresViewController: UITableViewController {
-    final let url = URL(string: theApi)
+    
     var highScoreData = [HighScoreData]()
-    var highScoreManager: HighScoreManager?
-    
-    
     @IBOutlet var theTableView: UITableView!
     
     override func viewDidLoad() {

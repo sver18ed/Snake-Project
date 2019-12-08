@@ -9,15 +9,17 @@
 import Foundation
 
 
-var flag = false
+var userInput = false
+let theUrl = "https://api.myjson.com/bins/fmxjk"
 
 class HighScoreManager{
-
-    var highScoreViewController = HighscoresViewController()
     
+    static let instance = HighScoreManager()
+    
+    //MARK: - fetchHighScore
     
     static func fetchHighScore(completion: @escaping ([HighScoreData])->()) {
-        guard let url = URL(string: "https://api.myjson.com/bins/q4e78") else {
+        guard let url = URL(string: theUrl ) else {
             return
         }
         var request = URLRequest(url: url)
@@ -34,29 +36,46 @@ class HighScoreManager{
                     let decoder = JSONDecoder()
                     let downloadedHighscore = try decoder.decode(HighScoreDict.self, from: data)
                     highScoreData.append(contentsOf: downloadedHighscore.highScore)
-                    if flag{
+                    if userInput{
                         highScoreData.append(contentsOf: DataHandler.instance.highScoreData)
                         DataHandler.instance.highScoreData.removeAll()
                         DataHandler.instance.highScoreData.append(contentsOf: highScoreData)
-                        DataHandler.instance.sendNewHighScoreDict()
-                        flag = false
+                        HighScoreManager.instance.updateHighScore()
+                        userInput = false
                     }
-                   /* if !DataHandler.instance.highScoreData.isEmpty {
-                        highScoreData.append(contentsOf: DataHandler.instance.highScoreData)
-                        DataHandler.instance.highScoreData.removeAll()
-                    }*/
                     DataHandler.instance.highScoreData.removeAll()
                     highScoreData = highScoreData.sorted(by: { $0.points > $1.points })
                 } catch{
                     print("Error")
                 }
                 completion(highScoreData)
-                
             }
-            
-            }
-        task.resume()
         }
+        task.resume()
+    }
+    
+    //MARK: - updateHighScore
+    
+    func updateHighScore(){
+        guard let url = URL(string: theUrl) else {
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        guard let httpBody = try? JSONEncoder().encode(HighScoreDict.init(highScore: DataHandler.instance.highScoreData)) else {
+            return
+        }
+        
+        request.httpBody = httpBody
+
+        let session = URLSession.shared
+        let task = session.dataTask(with: request) { (data, response, error) in
+            
+        }
+        task.resume()
+    }
 }
 
 

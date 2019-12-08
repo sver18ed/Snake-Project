@@ -76,7 +76,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Xop-9T-Nd0" firstAttribute="trailing" secondItem="kgG-kh-g8Q" secondAttribute="trailing" constant="55" id="1eQ-la-3a7"/>
                             <constraint firstItem="kPN-5T-LJT" firstAttribute="leading" secondItem="Xop-9T-Nd0" secondAttribute="leading" id="1yj-AF-9DT"/>
@@ -109,24 +109,29 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ecj-yA-BHd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="9v5-pV-cwZ">
-                            <rect key="frame" x="0.0" y="0.0" width="453" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <items>
                                 <navigationItem title="Highscore" id="Thb-MK-hjo">
-                                    <barButtonItem key="leftBarButtonItem" id="xJB-oE-A3a">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QuD-eV-6AB">
-                                            <rect key="frame" x="20" y="4" width="92" height="36"/>
+                                    <barButtonItem key="leftBarButtonItem" style="plain" id="XVY-p3-t6r">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="J8J-rQ-iyO">
+                                            <rect key="frame" x="20" y="7" width="92" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <state key="normal" title="Back">
-                                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <state key="normal" title="Home" backgroundImage="rectangle.fill" catalog="system">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>
-                                                <segue destination="TB0-Zx-64K" kind="unwind" unwindAction="prepareForUnwindWithSegue:" id="v0n-Iz-oKb"/>
+                                                <segue destination="TB0-Zx-64K" kind="unwind" unwindAction="prepareForUnwindWithSegue:" id="HNI-S6-km0"/>
                                             </connections>
                                         </button>
+                                        <connections>
+                                            <segue destination="TB0-Zx-64K" kind="unwind" unwindAction="prepareForUnwindWithSegue:" id="Jwv-FU-RpD"/>
+                                        </connections>
                                     </barButtonItem>
                                 </navigationItem>
                             </items>
@@ -141,19 +146,19 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLG-d1-lhr">
                                             <rect key="frame" x="280" y="20" width="94" height="34"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="vwF-2o-JSu">
-                                            <rect key="frame" x="127.33333333333333" y="31" width="39.333333333333329" height="12"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <rect key="frame" x="126.33333333333333" y="31" width="41.333333333333329" height="12"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qOY-78-Dbw">
-                                            <rect key="frame" x="39.999999999999993" y="31" width="67.333333333333314" height="12"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="39.999999999999993" y="31" width="66.333333333333314" height="12"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -172,6 +177,7 @@
                                         <constraint firstItem="vwF-2o-JSu" firstAttribute="top" secondItem="FeI-WZ-tia" secondAttribute="topMargin" constant="20" id="paq-o9-W1Q"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="nameLabel" destination="vwF-2o-JSu" id="4kU-TD-sSd"/>
                                     <outlet property="pointsLabel" destination="tLG-d1-lhr" id="1tz-Wx-yiS"/>
@@ -184,7 +190,6 @@
                             <outlet property="delegate" destination="l3w-Kn-zkV" id="x4z-49-wDu"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="XjI-W5-Ahm"/>
                     <connections>
                         <outlet property="theTableView" destination="Ecj-yA-BHd" id="lW3-eF-wFp"/>
                     </connections>
@@ -264,7 +269,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <state key="normal" title="Set Name" backgroundImage="rectangle.fill" catalog="system">
+                                <state key="normal" title="Add Score" backgroundImage="rectangle.fill" catalog="system">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -311,7 +316,6 @@
                         <outlet property="bestScore" destination="eU6-7q-Z6r" id="i4o-ag-8Dt"/>
                         <outlet property="currentScore" destination="Qph-pB-9EE" id="363-Bb-K1r"/>
                         <outlet property="nameField" destination="QnW-Jd-dO6" id="CLy-qb-WGm"/>
-                        <segue destination="wRG-E4-vqT" kind="show" identifier="mainMenuSegue" id="csY-b3-Y2s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xoa-yA-cTI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

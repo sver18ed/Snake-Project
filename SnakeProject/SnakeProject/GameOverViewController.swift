@@ -27,13 +27,11 @@ class GameOverViewController: UIViewController {
         currentScore.text = "Score: \(DataHandler.instance.currentScore)"
     }
     
-    @IBAction func setNameButton(_ sender: Any) {
+    @IBAction func addScore(_ sender: Any) {
         if nameField.text != ""{
             DataHandler.instance.highScoreData.append(HighScoreData.init(name: nameField.text ?? "", points: Int(DataHandler.instance.currentScore)))
-            flag = true
-            performSegue(withIdentifier: "mainMenuSegue", sender: self)
+            userInput = true
+            performSegue(withIdentifier: "highScoreSegue", sender: self)
         }
     }
-    
-    @IBAction func prepareForUnwind(segue:UIStoryboardSegue){}
 }
