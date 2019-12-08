@@ -12,8 +12,9 @@ import GameplayKit
 
 class SnakeAnimation: SKScene {
     
-    var snakeFrames :[SKTexture]?
-    var snakeFrames2 :[SKTexture]?
+    var horizontalSnakeImages :[SKTexture]?
+    var verticalSnakeIamges :[SKTexture]?
+    var snakeSize: Int = 400
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -24,45 +25,48 @@ class SnakeAnimation: SKScene {
     override init(size: CGSize) {
         super.init(size: size)
         self.backgroundColor = UIColor.white
-        var frames:[SKTexture] = []
-        var frames2:[SKTexture] = []
+        var horizontalFrames:[SKTexture] = []
+        var verticalFrames:[SKTexture] = []
         
         let snakeAtlas = SKTextureAtlas(named: "Sprites")
         let pic1 = snakeAtlas.textureNamed("snakeH_1")
-        frames.append(pic1)
+        horizontalFrames.append(pic1)
         let pic2 = snakeAtlas.textureNamed("snakeH_2")
-        frames.append(pic2)
+        horizontalFrames.append(pic2)
         let pic3 = snakeAtlas.textureNamed("snakeU_1")
-        frames2.append(pic3)
+        verticalFrames.append(pic3)
         let pic4 = snakeAtlas.textureNamed("snakeU_2")
-        frames2.append(pic4)
+        verticalFrames.append(pic4)
     
-        self.snakeFrames = frames
-        self.snakeFrames2 = frames2
+        self.horizontalSnakeImages = horizontalFrames
+        self.verticalSnakeIamges = verticalFrames
     }
     
     // MARK: - moveSnakeHorizontal
     
     func moveSnakeHorizontal(){
-        let texture = self.snakeFrames![0]
+        let texture = self.horizontalSnakeImages![0]
         let snake = SKSpriteNode(texture: texture)
-        snake.size = CGSize(width: 400, height: 400)
+        snake.size = CGSize(width: snakeSize, height: snakeSize)
         
         let generateRandomSnakeYPosition = GKRandomDistribution(lowestValue: 50, highestValue: (Int(self.frame.size.height)-50))
         let yPosition = CGFloat(generateRandomSnakeYPosition.nextInt())
-        let fromRightToLeft = arc4random() % 2 == 0
-        let xPosition = fromRightToLeft ? self.frame.size
-            .width + snake.size.width / 2 : -snake.size.width / 2 //select starting position depending on orientation
+        let determineStart = arc4random() % 2 == 0
+        //select starting position depending on orientation
+        let xPosition = determineStart ? self.frame.size
+            .width + snake.size.width / 2 : -snake.size.width / 2
         snake.position = CGPoint(x: xPosition, y: yPosition)
-        if fromRightToLeft{
-            snake.xScale = -1 //reverse direction of image
+        //reverse direction of image
+        if determineStart{
+            snake.xScale = -1
         }
         
         self.addChild(snake)
-        snake.run(SKAction.repeatForever(SKAction.animate(with: self.snakeFrames!, timePerFrame: 0.65, resize: false, restore: true)))
+        snake.run(SKAction.repeatForever(SKAction.animate(with: self.horizontalSnakeImages!, timePerFrame: 0.65, resize: false, restore: true)))
         var rangeToCover = self.frame.size.width + snake.size.width
-        if fromRightToLeft{
-            rangeToCover *= -1 //reversing direction
+        //reversing direction
+        if determineStart{
+            rangeToCover *= -1
         }
         
         let time = TimeInterval(abs(rangeToCover/100))
@@ -79,25 +83,28 @@ class SnakeAnimation: SKScene {
     // MARK: - moveSnakeVertical
     
     func moveSnakeVertical(){
-        let texture = self.snakeFrames2![0]
+        let texture = self.verticalSnakeIamges![0]
         let snake = SKSpriteNode(texture: texture)
-        snake.size = CGSize(width: 400, height: 400)
+        snake.size = CGSize(width: snakeSize, height: snakeSize)
         
         let generateRandomSnakeXPosition = GKRandomDistribution(lowestValue: 50, highestValue: (Int(self.frame.size.width)-50))
         let xPosition = CGFloat(generateRandomSnakeXPosition.nextInt())
-        let fromRightToLeft = arc4random() % 2 == 0
-        let yPosition = fromRightToLeft ? self.frame.size
-            .height + snake.size.height / 2 : -snake.size.height / 2 //select starting position depending on orientation
+        let determineStart = arc4random() % 2 == 0
+        
+        let yPosition = determineStart ? self.frame.size
+            .height + snake.size.height / 2 : -snake.size.height / 2
         snake.position = CGPoint(x: xPosition, y: yPosition)
-        if fromRightToLeft{
-            snake.yScale = -1 //reverse direction of image
+        //reverse direction of image
+        if determineStart{
+            snake.yScale = -1
         }
         
         self.addChild(snake)
-        snake.run(SKAction.repeatForever(SKAction.animate(with: self.snakeFrames2!, timePerFrame: 0.65, resize: false, restore: true)))
+        snake.run(SKAction.repeatForever(SKAction.animate(with: self.verticalSnakeIamges!, timePerFrame: 0.65, resize: false, restore: true)))
         var rangeToCover = self.frame.size.height + snake.size.height
-        if fromRightToLeft{
-            rangeToCover *= -1 //reversing direction
+        //reversing direction
+        if determineStart{
+            rangeToCover *= -1
         }
         
         let time = TimeInterval(abs(rangeToCover/100))
