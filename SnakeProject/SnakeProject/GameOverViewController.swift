@@ -19,6 +19,15 @@ class GameOverViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchJson()
+    }
+    
+    func fetchJson(){
+          HighScoreManager.fetchHighScore { (results:[HighScoreData]) in
+            DataHandler.instance.highScoreData = results
+             DispatchQueue.main.async {
+             }
+         }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -26,12 +35,13 @@ class GameOverViewController: UIViewController {
         bestScore.text = "Local Best: \(DataHandler.instance.bestScore)"
         currentScore.text = "Score: \(DataHandler.instance.currentScore)"
     }
-    
+
     @IBAction func addScore(_ sender: Any) {
         if nameField.text != ""{
             DataHandler.instance.highScoreData.append(HighScoreData.init(name: nameField.text ?? "", points: Int(DataHandler.instance.currentScore)))
-            userInput = true
-            performSegue(withIdentifier: "highScoreSegue", sender: self)
+            DataHandler.instance.updateHighScore()
+            performSegue(withIdentifier: "mainMenuSegue", sender: self)
         }
     }
+      @IBAction func prepareForUnwind(segue:UIStoryboardSegue){}
 }

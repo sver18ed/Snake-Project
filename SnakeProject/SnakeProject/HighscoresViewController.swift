@@ -18,7 +18,7 @@ class HighscoresViewController: UITableViewController {
         fetchJson()
     }
     
-    func fetchJson(){        
+    func fetchJson(){
            HighScoreManager.fetchHighScore { (results:[HighScoreData]) in
               self.highScoreData = results
               DispatchQueue.main.async {

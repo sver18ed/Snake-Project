@@ -122,7 +122,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <state key="normal" title="Home" backgroundImage="rectangle.fill" catalog="system">
+                                            <state key="normal" title="Back" backgroundImage="rectangle.fill" catalog="system">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>
@@ -190,6 +190,7 @@
                             <outlet property="delegate" destination="l3w-Kn-zkV" id="x4z-49-wDu"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="qxN-4r-i1K"/>
                     <connections>
                         <outlet property="theTableView" destination="Ecj-yA-BHd" id="lW3-eF-wFp"/>
                     </connections>
@@ -262,20 +263,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPp-J9-X5t" customClass="homeSegue">
-                                <rect key="frame" x="20" y="280.66666666666669" width="154" height="31.999999999999972"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="KTr-lS-oX4"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <state key="normal" title="Add Score" backgroundImage="rectangle.fill" catalog="system">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="setNameButton:" destination="ypo-Pp-2dO" eventType="touchUpInside" id="sXY-XN-sUD"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Local Best:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eU6-7q-Z6r">
                                 <rect key="frame" x="220" y="279" width="174" height="35"/>
                                 <constraints>
@@ -285,27 +272,41 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhw-kB-nYa">
+                                <rect key="frame" x="20" y="280.66666666666669" width="154" height="31.999999999999972"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="cfL-jH-vXX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Add Score" backgroundImage="rectangle.fill" catalog="system">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addScore:" destination="ypo-Pp-2dO" eventType="touchUpInside" id="bOO-0k-SaQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="eU6-7q-Z6r" firstAttribute="top" secondItem="Qph-pB-9EE" secondAttribute="bottom" constant="20" id="140-nj-Msa"/>
                             <constraint firstItem="7hw-zE-YSk" firstAttribute="trailing" secondItem="eU6-7q-Z6r" secondAttribute="trailing" constant="20" id="Alx-dH-ZeZ"/>
                             <constraint firstItem="QnW-Jd-dO6" firstAttribute="top" secondItem="0eP-w3-9dy" secondAttribute="bottom" constant="50" id="HAh-s8-uf5"/>
+                            <constraint firstItem="vhw-kB-nYa" firstAttribute="top" secondItem="QnW-Jd-dO6" secondAttribute="bottom" constant="20" id="J8Y-K9-j1t"/>
                             <constraint firstItem="Qph-pB-9EE" firstAttribute="centerX" secondItem="ead-8T-g3h" secondAttribute="centerX" constant="100" id="KbU-RR-Uqt"/>
                             <constraint firstItem="QnW-Jd-dO6" firstAttribute="centerX" secondItem="ead-8T-g3h" secondAttribute="centerX" constant="-110" id="LBx-7n-muK"/>
                             <constraint firstItem="0eP-w3-9dy" firstAttribute="top" secondItem="7hw-zE-YSk" secondAttribute="top" constant="50" id="PDq-p2-xfK"/>
-                            <constraint firstItem="HPp-J9-X5t" firstAttribute="top" secondItem="QnW-Jd-dO6" secondAttribute="bottom" constant="20" id="S1u-uE-idh"/>
+                            <constraint firstItem="vhw-kB-nYa" firstAttribute="centerX" secondItem="ead-8T-g3h" secondAttribute="centerX" constant="-110" id="PmY-Ac-2Tw"/>
                             <constraint firstItem="0eP-w3-9dy" firstAttribute="leading" secondItem="7hw-zE-YSk" secondAttribute="leading" constant="20" id="Vhu-WP-u6p"/>
                             <constraint firstItem="7hw-zE-YSk" firstAttribute="trailing" secondItem="Qph-pB-9EE" secondAttribute="trailing" constant="20" id="WhA-0A-pcJ"/>
                             <constraint firstItem="8pD-Lk-1At" firstAttribute="leading" secondItem="7hw-zE-YSk" secondAttribute="leading" constant="100" id="ZQA-Op-XS0"/>
                             <constraint firstItem="7hw-zE-YSk" firstAttribute="trailing" secondItem="8pD-Lk-1At" secondAttribute="trailing" constant="100" id="b2d-En-uCe"/>
+                            <constraint firstItem="vhw-kB-nYa" firstAttribute="leading" secondItem="7hw-zE-YSk" secondAttribute="leading" constant="20" id="jsE-ou-KJo"/>
                             <constraint firstItem="8pD-Lk-1At" firstAttribute="top" secondItem="hcQ-2f-bQP" secondAttribute="bottom" constant="20" id="mwo-bY-glP"/>
-                            <constraint firstItem="HPp-J9-X5t" firstAttribute="centerX" secondItem="ead-8T-g3h" secondAttribute="centerX" constant="-110" id="nxD-Sn-29R"/>
                             <constraint firstItem="7hw-zE-YSk" firstAttribute="trailing" secondItem="0eP-w3-9dy" secondAttribute="trailing" constant="20" id="oZC-DI-Jxy"/>
                             <constraint firstItem="hcQ-2f-bQP" firstAttribute="top" secondItem="eU6-7q-Z6r" secondAttribute="bottom" constant="20" id="s8y-dN-YDV"/>
                             <constraint firstItem="QnW-Jd-dO6" firstAttribute="leading" secondItem="7hw-zE-YSk" secondAttribute="leading" constant="20" id="tSO-Qz-gmo"/>
                             <constraint firstItem="Qph-pB-9EE" firstAttribute="top" secondItem="0eP-w3-9dy" secondAttribute="bottom" constant="50" id="uBM-hL-wbL"/>
-                            <constraint firstItem="HPp-J9-X5t" firstAttribute="leading" secondItem="7hw-zE-YSk" secondAttribute="leading" constant="20" id="uwP-b6-mYp"/>
                             <constraint firstItem="hcQ-2f-bQP" firstAttribute="centerX" secondItem="ead-8T-g3h" secondAttribute="centerX" id="yUl-r8-4OA"/>
                             <constraint firstItem="eU6-7q-Z6r" firstAttribute="centerX" secondItem="ead-8T-g3h" secondAttribute="centerX" constant="100" id="zmV-qK-5YO"/>
                         </constraints>
@@ -316,11 +317,12 @@
                         <outlet property="bestScore" destination="eU6-7q-Z6r" id="i4o-ag-8Dt"/>
                         <outlet property="currentScore" destination="Qph-pB-9EE" id="363-Bb-K1r"/>
                         <outlet property="nameField" destination="QnW-Jd-dO6" id="CLy-qb-WGm"/>
+                        <segue destination="wRG-E4-vqT" kind="show" identifier="mainMenuSegue" id="HPs-pX-ZpN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xoa-yA-cTI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1049.2753623188407" y="811.14130434782612"/>
+            <point key="canvasLocation" x="1049.2753623188407" y="810.9375"/>
         </scene>
     </scenes>
     <resources>
