@@ -98,6 +98,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B012ADE239D3E8D008BDF41 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BA528D8B237E8D0E00B57435 /* GameViewController.swift */,
+				BA528DB7237EB7D800B57435 /* MainMenuViewController.swift */,
+				BA528DB9237EB7F100B57435 /* GameOverViewController.swift */,
+				BA528DBB237EB80300B57435 /* HighscoresViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3B012AE1239D3F49008BDF41 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BA528D89237E8D0E00B57435 /* GameScene.swift */,
+				3BF003B5238E89130042C406 /* HighScoreData.swift */,
+				3BF003B1238E888C0042C406 /* HighScoreCell.swift */,
+				9EE95F0C238FBB5300B3CB96 /* SnakeAnimation.swift */,
+				3BD9165B239AA039005D09A7 /* HighScoreManager.swift */,
+				BA528DBD237EBE7C00B57435 /* GameManager.swift */,
+				923331812391258200596B84 /* DataHandler.swift */,
+				3BD9165F239ABDEB005D09A7 /* HighScoreDict.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		BA528D77237E8D0E00B57435 = {
 			isa = PBXGroup;
 			children = (
@@ -121,24 +147,14 @@
 		BA528D82237E8D0E00B57435 /* SnakeProject */ = {
 			isa = PBXGroup;
 			children = (
-				BA528D83237E8D0E00B57435 /* AppDelegate.swift */,
+				3B012ADE239D3E8D008BDF41 /* ViewControllers */,
+				3B012AE1239D3F49008BDF41 /* Models */,
 				BA528D85237E8D0E00B57435 /* GameScene.sks */,
-				BA528D89237E8D0E00B57435 /* GameScene.swift */,
-				BA528D8B237E8D0E00B57435 /* GameViewController.swift */,
+				BA528D83237E8D0E00B57435 /* AppDelegate.swift */,
 				BA528D8D237E8D0E00B57435 /* Main.storyboard */,
-				3BF003B5238E89130042C406 /* HighScoreData.swift */,
-				3BF003B1238E888C0042C406 /* HighScoreCell.swift */,
 				BA528D90237E8D1100B57435 /* Assets.xcassets */,
 				BA528D92237E8D1100B57435 /* LaunchScreen.storyboard */,
 				BA528D95237E8D1100B57435 /* Info.plist */,
-				9EE95F0C238FBB5300B3CB96 /* SnakeAnimation.swift */,
-				BA528DB7237EB7D800B57435 /* MainMenuViewController.swift */,
-				BA528DB9237EB7F100B57435 /* GameOverViewController.swift */,
-				BA528DBB237EB80300B57435 /* HighscoresViewController.swift */,
-				3BD9165B239AA039005D09A7 /* HighScoreManager.swift */,
-				BA528DBD237EBE7C00B57435 /* GameManager.swift */,
-				923331812391258200596B84 /* DataHandler.swift */,
-				3BD9165F239ABDEB005D09A7 /* HighScoreDict.swift */,
 			);
 			path = SnakeProject;
 			sourceTree = "<group>";
