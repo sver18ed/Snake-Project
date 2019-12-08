@@ -7,28 +7,49 @@
 //
 
 import XCTest
+import SpriteKit
 @testable import SnakeProject
 
 class SnakeProjectTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    // MARK: - changeDirection
+    func testChangeDirection() {
+        let gameScene = GameScene()
+        let gameManager = GameManager(scene: gameScene)
+        gameManager.changeDirection(direction: "up")
+        XCTAssertEqual(gameManager.playerDirection, 2, "The direction was not changed correctly")
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    // MARK: - checkForPictures
+    func testCheckForPictures(){
+        var frames:[SKTexture] = []
+        var frames2:[SKTexture] = []
+        let snakeAtlas = SKTextureAtlas(named: "Sprites")
+        let pic1 = snakeAtlas.textureNamed("snakeH_1")
+        frames.append(pic1)
+        let pic2 = snakeAtlas.textureNamed("snakeH_2")
+        frames.append(pic2)
+        let pic3 = snakeAtlas.textureNamed("snakeU_1")
+        frames2.append(pic3)
+        let pic4 = snakeAtlas.textureNamed("snakeU_2")
+        frames2.append(pic4)
+
+        XCTAssertEqual(frames.count , 2, "The Picture assets for Horizontal weren't found, the proper pictures are missing.")
+        XCTAssertEqual(frames2.count, 2, "The Picture assets for Vertical weren't found, the proper pictures are missing.")
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    // MARK: - testResetCurrentScore
+    func testResetCurrentScore(){
+        let dataHandler = DataHandler()
+        dataHandler.currentScore = 10
+        dataHandler.resetCurrentScore()
+        XCTAssertEqual(dataHandler.currentScore,0,"the score wasnt set")
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    // MARK: - testContains
+    func testContains(){
+        let gameScene = GameScene()
+        let gameManager = GameManager(scene: gameScene)
+        XCTAssertTrue(gameManager.contains(a: [(1, 1)], v: (1, 1)))
     }
-
 }
